@@ -2,13 +2,13 @@ import { TypeAssert, TypeGuard } from '../_helpers/types';
 import { throwAssertError } from '../_helpers/lib';
 
 
-export type DomainServerErrorItem = {
+export type DomainServiceErrorItem = {
     code: number;
     target: string;
     messages: string[];
 }
 
-export const isDomainServerErrorItem: TypeGuard<DomainServerErrorItem> = function (data: unknown): data is DomainServerErrorItem {
+export const isDomainServiceErrorItem: TypeGuard<DomainServiceErrorItem> = function (data: unknown): data is DomainServiceErrorItem {
     if (typeof data !== 'object') {
         return false;
     }
@@ -24,8 +24,8 @@ export const isDomainServerErrorItem: TypeGuard<DomainServerErrorItem> = functio
     return true;
 };
 
-export const assertDomainServerErrorItem: TypeAssert<DomainServerErrorItem> = function (data: unknown, variableName: string, typeName: string) {
-    if (!isDomainServerErrorItem(data)) {
+export const assertDomainServiceErrorItem: TypeAssert<DomainServiceErrorItem> = function (data: unknown, variableName: string, typeName: string) {
+    if (!isDomainServiceErrorItem(data)) {
         throwAssertError(variableName, typeName);
     }
 };

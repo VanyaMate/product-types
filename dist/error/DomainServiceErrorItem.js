@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.assertDomainServerErrorItem = exports.isDomainServerErrorItem = void 0;
+exports.assertDomainServiceErrorItem = exports.isDomainServiceErrorItem = void 0;
 var lib_1 = require("../_helpers/lib");
-var isDomainServerErrorItem = function (data) {
+var isDomainServiceErrorItem = function (data) {
     if (typeof data !== 'object') {
         return false;
     }
@@ -14,10 +14,10 @@ var isDomainServerErrorItem = function (data) {
     }
     return true;
 };
-exports.isDomainServerErrorItem = isDomainServerErrorItem;
-var assertDomainServerErrorItem = function (data, variableName, typeName) {
-    if (!(0, exports.isDomainServerErrorItem)(data)) {
+exports.isDomainServiceErrorItem = isDomainServiceErrorItem;
+var assertDomainServiceErrorItem = function (data, variableName, typeName) {
+    if (!(0, exports.isDomainServiceErrorItem)(data)) {
         (0, lib_1.throwAssertError)(variableName, typeName);
     }
 };
-exports.assertDomainServerErrorItem = assertDomainServerErrorItem;
+exports.assertDomainServiceErrorItem = assertDomainServiceErrorItem;

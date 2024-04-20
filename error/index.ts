@@ -1,2 +1,3 @@
-export * from './DomainServerResponseError';
-export * from './DomainServerErrorItem';
+export * from './DomainServiceResponseError';
+export * from './DomainServiceErrorItem';
+export * from './DomainSimpleError';
