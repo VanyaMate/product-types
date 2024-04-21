@@ -5,6 +5,9 @@ var error_1 = require("../../error");
 var serviceErrorResponse = function (error, target, code) {
     if (target === void 0) { target = ''; }
     if (code === void 0) { code = 0; }
+    if ((0, error_1.isDomainServiceResponseError)(error)) {
+        return error;
+    }
     if ((0, error_1.isDomainServiceErrorItem)(error)) {
         return { errors: [error] };
     }

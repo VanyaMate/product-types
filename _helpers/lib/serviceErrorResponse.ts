@@ -1,11 +1,15 @@
 import {
     DomainServiceResponseError,
-    isDomainServiceErrorItem,
+    isDomainServiceErrorItem, isDomainServiceResponseError,
     isDomainSimpleError,
 } from '../../error';
 
 
 export const serviceErrorResponse = function (error: unknown, target: string = '', code: number = 0): DomainServiceResponseError {
+    if (isDomainServiceResponseError(error)) {
+        return error;
+    }
+
     if (isDomainServiceErrorItem(error)) {
         return { errors: [ error ] };
     }
