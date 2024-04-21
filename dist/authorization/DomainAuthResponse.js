@@ -7,7 +7,9 @@ var isDomainAuthResponse = function (data) {
     if (typeof data !== 'object') {
         return false;
     }
-    if (typeof data['token'] !== 'string' ||
+    if (!Array.isArray(data['tokens']) ||
+        typeof data['tokens'][0] !== 'string' ||
+        typeof data['tokens'][1] !== 'string' ||
         !(0, user_1.isDomainUser)(data['user'])) {
         return false;
     }

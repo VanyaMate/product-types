@@ -4,7 +4,7 @@ import { DomainUser, isDomainUser } from '../user';
 
 
 export type DomainAuthResponse = {
-    token: string;
+    tokens: [ string, string ];
     user: DomainUser;
 }
 
@@ -14,7 +14,9 @@ export const isDomainAuthResponse: TypeGuard<DomainAuthResponse> = function (dat
     }
 
     if (
-        typeof data['token'] !== 'string' ||
+        !Array.isArray(data['tokens']) ||
+        typeof data['tokens'][0] !== 'string' ||
+        typeof data['tokens'][1] !== 'string' ||
         !isDomainUser(data['user'])
     ) {
         return false;
