@@ -1,6 +1,7 @@
-import { DomainTokens } from '../token';
-import { TypeAssert, TypeGuard } from '../_helpers/types';
-import { throwAssertError } from '../_helpers/lib';
+import { TypeGuard } from '../_helpers/types/guard.types';
+import { DomainTokens } from '../token/DomainTokens';
+import { TypeAssert } from '../_helpers/types/assert.types';
+import { throwAssertError } from '../_helpers/lib/throwAssertError';
 
 
 export type DomainResponse = {

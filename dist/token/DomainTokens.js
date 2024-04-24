@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.assertDomainTokens = exports.isDomainTokens = void 0;
-var lib_1 = require("../_helpers/lib");
+var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
 var isDomainTokens = function (data) {
     if (!Array.isArray(data)) {
         return false;
@@ -15,7 +15,7 @@ var isDomainTokens = function (data) {
 exports.isDomainTokens = isDomainTokens;
 var assertDomainTokens = function (data, variableName, typeName) {
     if (!(0, exports.isDomainTokens)(data)) {
-        (0, lib_1.throwAssertError)(variableName, typeName);
+        (0, throwAssertError_1.throwAssertError)(variableName, typeName);
     }
 };
 exports.assertDomainTokens = assertDomainTokens;

@@ -1,11 +1,12 @@
+import { TypeGuard } from '../_helpers/types/guard.types';
 import { DomainUser, isDomainUser } from './DomainUser';
 import { DomainUserNameInfo, isDomainUserNameInfo } from './DomainUserNameInfo';
 import {
     DomainUserContactsInfo,
     isDomainUserContactsInfo,
 } from './DomainUserContactsInfo';
-import { TypeAssert, TypeGuard } from '../_helpers/types';
-import { throwAssertError } from '../_helpers/lib';
+import { TypeAssert } from '../_helpers/types/assert.types';
+import { throwAssertError } from '../_helpers/lib/throwAssertError';
 
 
 export type DomainUserFull =

@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.assertDomainTokenGenerateData = exports.isDomainTokenGenerateData = void 0;
-var lib_1 = require("../_helpers/lib");
 var DomainFingerprint_1 = require("../fingerprint/DomainFingerprint");
+var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
 var isDomainTokenGenerateData = function (data) {
     if (typeof data !== 'object') {
         return false;
@@ -16,7 +16,7 @@ var isDomainTokenGenerateData = function (data) {
 exports.isDomainTokenGenerateData = isDomainTokenGenerateData;
 var assertDomainTokenGenerateData = function (data, variableName, typeName) {
     if (!(0, exports.isDomainTokenGenerateData)(data)) {
-        (0, lib_1.throwAssertError)(variableName, typeName);
+        (0, throwAssertError_1.throwAssertError)(variableName, typeName);
     }
 };
 exports.assertDomainTokenGenerateData = assertDomainTokenGenerateData;

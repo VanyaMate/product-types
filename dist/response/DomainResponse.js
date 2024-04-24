@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.assertDomainResponse = exports.isDomainResponse = void 0;
-var lib_1 = require("../_helpers/lib");
+var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
 var isDomainResponse = function (data) {
     if (typeof data !== 'object') {
         return false;
@@ -14,7 +14,7 @@ var isDomainResponse = function (data) {
 exports.isDomainResponse = isDomainResponse;
 var assertDomainResponse = function (data, variableName, typeName) {
     if (!(0, exports.isDomainResponse)(data)) {
-        (0, lib_1.throwAssertError)(variableName, typeName);
+        (0, throwAssertError_1.throwAssertError)(variableName, typeName);
     }
 };
 exports.assertDomainResponse = assertDomainResponse;

@@ -1,8 +1,9 @@
 import {
     DomainServiceResponseError,
-    isDomainServiceErrorItem, isDomainServiceResponseError,
-    isDomainSimpleError,
-} from '../../error';
+    isDomainServiceResponseError,
+} from '../../error/DomainServiceResponseError';
+import { isDomainServiceErrorItem } from '../../error/DomainServiceErrorItem';
+import { isDomainSimpleError } from '../../error/DomainSimpleError';
 
 
 export const serviceErrorResponse = function (error: unknown, target: string = '', code: number = 0, title: string = ''): DomainServiceResponseError {

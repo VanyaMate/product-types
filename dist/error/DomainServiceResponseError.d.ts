@@ -1,5 +1,6 @@
-import { TypeAssert, TypeGuard } from '../_helpers/types';
 import { DomainServiceErrorItem } from './DomainServiceErrorItem';
+import { TypeGuard } from '../_helpers/types/guard.types';
+import { TypeAssert } from '../_helpers/types/assert.types';
 export type DomainServiceResponseError = {
     errors: DomainServiceErrorItem[];
 };

@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.assertDomainImageFull = exports.isDomainImageFull = void 0;
-var lib_1 = require("../_helpers/lib");
 var DomainImage_1 = require("./DomainImage");
+var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
 var isDomainImageFull = function (data) {
     if (typeof data !== 'object') {
         return false;
@@ -16,7 +16,7 @@ var isDomainImageFull = function (data) {
 exports.isDomainImageFull = isDomainImageFull;
 var assertDomainImageFull = function (data, variableName, typeName) {
     if (!(0, exports.isDomainImageFull)(data)) {
-        (0, lib_1.throwAssertError)(variableName, typeName);
+        (0, throwAssertError_1.throwAssertError)(variableName, typeName);
     }
 };
 exports.assertDomainImageFull = assertDomainImageFull;

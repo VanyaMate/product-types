@@ -1,5 +1,6 @@
-import { DomainTokens } from '../token';
-import { TypeAssert, TypeGuard } from '../_helpers/types';
+import { TypeGuard } from '../_helpers/types/guard.types';
+import { DomainTokens } from '../token/DomainTokens';
+import { TypeAssert } from '../_helpers/types/assert.types';
 export type DomainResponse = {
     data: unknown;
     tokens?: DomainTokens;

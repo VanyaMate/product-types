@@ -1,6 +1,7 @@
-import { TypeAssert, TypeGuard } from '../_helpers/types';
-import { throwAssertError } from '../_helpers/lib';
 import { DomainFingerprint, isDomainFingerprint } from '../fingerprint/DomainFingerprint';
+import { TypeGuard } from '../_helpers/types/guard.types';
+import { TypeAssert } from '../_helpers/types/assert.types';
+import { throwAssertError } from '../_helpers/lib/throwAssertError';
 
 
 export type DomainTokenGenerateData = {

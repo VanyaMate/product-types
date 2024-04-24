@@ -1,4 +1,5 @@
-import { TypeAssert, TypeGuard } from '../_helpers/types';
+import { TypeGuard } from '../_helpers/types/guard.types';
+import { TypeAssert } from '../_helpers/types/assert.types';
 export type DomainFingerprint = {
     ip: string;
     browser: string;

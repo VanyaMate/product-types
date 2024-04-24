@@ -1,6 +1,7 @@
-import { TypeAssert, TypeGuard } from '../_helpers/types';
-import { throwAssertError } from '../_helpers/lib';
-import { DomainUser, isDomainUser } from '../user';
+import { TypeGuard } from '../_helpers/types/guard.types';
+import { DomainUser, isDomainUser } from '../user/DomainUser';
+import { TypeAssert } from '../_helpers/types/assert.types';
+import { throwAssertError } from '../_helpers/lib/throwAssertError';
 
 
 export type DomainAuthResponse = {

@@ -4,7 +4,7 @@ exports.assertDomainUserFull = exports.isDomainUserFull = void 0;
 var DomainUser_1 = require("./DomainUser");
 var DomainUserNameInfo_1 = require("./DomainUserNameInfo");
 var DomainUserContactsInfo_1 = require("./DomainUserContactsInfo");
-var lib_1 = require("../_helpers/lib");
+var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
 var isDomainUserFull = function (data) {
     if (typeof data !== 'object') {
         return false;
@@ -19,7 +19,7 @@ var isDomainUserFull = function (data) {
 exports.isDomainUserFull = isDomainUserFull;
 var assertDomainUserFull = function (data, variableName, typeName) {
     if (!(0, exports.isDomainUserFull)(data)) {
-        (0, lib_1.throwAssertError)(variableName, typeName);
+        (0, throwAssertError_1.throwAssertError)(variableName, typeName);
     }
 };
 exports.assertDomainUserFull = assertDomainUserFull;

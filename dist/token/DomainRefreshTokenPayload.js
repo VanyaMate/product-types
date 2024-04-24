@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.assertDomainRefreshTokenPayload = exports.isDomainRefreshTokenPayload = void 0;
-var lib_1 = require("../_helpers/lib");
+var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
 var isDomainRefreshTokenPayload = function (data) {
     if (typeof data !== 'object') {
         return false;
@@ -14,7 +14,7 @@ var isDomainRefreshTokenPayload = function (data) {
 exports.isDomainRefreshTokenPayload = isDomainRefreshTokenPayload;
 var assertDomainRefreshTokenPayload = function (data, variableName, typeName) {
     if (!(0, exports.isDomainRefreshTokenPayload)(data)) {
-        (0, lib_1.throwAssertError)(variableName, typeName);
+        (0, throwAssertError_1.throwAssertError)(variableName, typeName);
     }
 };
 exports.assertDomainRefreshTokenPayload = assertDomainRefreshTokenPayload;

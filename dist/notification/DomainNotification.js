@@ -1,7 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.assertDomainNotification = exports.isDomainNotification = void 0;
-var lib_1 = require("../_helpers/lib");
+exports.assertDomainNotification = exports.isDomainNotification = exports.NotificationType = void 0;
+var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
+var NotificationType;
+(function (NotificationType) {
+    NotificationType["MESSAGE"] = "msg";
+    NotificationType["MESSAGE_DELETED"] = "msg_d";
+    NotificationType["MESSAGE_REDACTED"] = "msg_r";
+    NotificationType["FRIEND_REQUEST"] = "fr_r";
+    NotificationType["FRIEND_REQUEST_ACCEPTED"] = "fr_ra";
+    NotificationType["FRIEND_REQUEST_CANCELED"] = "fr_rc";
+})(NotificationType || (exports.NotificationType = NotificationType = {}));
 var isDomainNotification = function (data) {
     if (typeof data !== 'object') {
         return false;
@@ -16,7 +25,7 @@ var isDomainNotification = function (data) {
 exports.isDomainNotification = isDomainNotification;
 var assertDomainNotification = function (data, variableName, typeName) {
     if (!(0, exports.isDomainNotification)(data)) {
-        (0, lib_1.throwAssertError)(variableName, typeName);
+        (0, throwAssertError_1.throwAssertError)(variableName, typeName);
     }
 };
 exports.assertDomainNotification = assertDomainNotification;
