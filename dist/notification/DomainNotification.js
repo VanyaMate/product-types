@@ -10,6 +10,7 @@ var NotificationType;
     NotificationType["MESSAGE"] = "msg";
     NotificationType["MESSAGE_DELETED"] = "msg_d";
     NotificationType["MESSAGE_REDACTED"] = "msg_r";
+    NotificationType["MESSAGE_READ"] = "msg_read";
     NotificationType["FRIEND_REQUEST"] = "fr_r";
     NotificationType["FRIEND_REQUEST_ACCEPTED"] = "fr_ra";
     NotificationType["FRIEND_REQUEST_CANCELED"] = "fr_rc";

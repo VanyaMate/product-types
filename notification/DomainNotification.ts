@@ -10,6 +10,7 @@ export enum NotificationType {
     MESSAGE                 = 'msg',
     MESSAGE_DELETED         = 'msg_d',
     MESSAGE_REDACTED        = 'msg_r',
+    MESSAGE_READ            = 'msg_read',
     FRIEND_REQUEST          = 'fr_r',
     FRIEND_REQUEST_ACCEPTED = 'fr_ra',
     FRIEND_REQUEST_CANCELED = 'fr_rc',
