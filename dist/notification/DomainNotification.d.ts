@@ -1,6 +1,7 @@
 import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 export declare enum NotificationType {
+    TOKENS_UPDATE = "tkn",
     MESSAGE = "msg",
     MESSAGE_DELETED = "msg_d",
     MESSAGE_REDACTED = "msg_r",

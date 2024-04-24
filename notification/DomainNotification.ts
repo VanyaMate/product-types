@@ -4,6 +4,7 @@ import { throwAssertError } from '../_helpers/lib/throwAssertError';
 
 
 export enum NotificationType {
+    TOKENS_UPDATE           = 'tkn',
     MESSAGE                 = 'msg',
     MESSAGE_DELETED         = 'msg_d',
     MESSAGE_REDACTED        = 'msg_r',
