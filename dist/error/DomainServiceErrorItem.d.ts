@@ -2,6 +2,7 @@ import { TypeAssert, TypeGuard } from '../_helpers/types';
 export type DomainServiceErrorItem = {
     code: number;
     target: string;
+    title: string;
     messages: string[];
 };
 export declare const isDomainServiceErrorItem: TypeGuard<DomainServiceErrorItem>;

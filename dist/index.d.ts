@@ -3,5 +3,6 @@ export * from './error';
 export * from './image';
 export * from './authorization';
 export * from './token';
+export * from './fingerprint';
 export * from './_helpers/lib';
 export * from './_helpers/types';

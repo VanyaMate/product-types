@@ -19,5 +19,6 @@ __exportStar(require("./error"), exports);
 __exportStar(require("./image"), exports);
 __exportStar(require("./authorization"), exports);
 __exportStar(require("./token"), exports);
+__exportStar(require("./fingerprint"), exports);
 __exportStar(require("./_helpers/lib"), exports);
 __exportStar(require("./_helpers/types"), exports);

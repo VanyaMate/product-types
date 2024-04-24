@@ -4,7 +4,7 @@ import { DomainFingerprint, isDomainFingerprint } from '../fingerprint/DomainFin
 
 
 export type DomainTokenGenerateData = {
-    login: string;
+    user_id: string;
     fingerprint: DomainFingerprint;
 }
 
@@ -14,7 +14,7 @@ export const isDomainTokenGenerateData: TypeGuard<DomainTokenGenerateData> = fun
     }
 
     if (
-        typeof data['login'] !== 'string' ||
+        typeof data['user_id'] !== 'string' ||
         !isDomainFingerprint(data['fingerprint'])
     ) {
         return false;

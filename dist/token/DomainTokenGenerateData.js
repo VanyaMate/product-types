@@ -7,7 +7,7 @@ var isDomainTokenGenerateData = function (data) {
     if (typeof data !== 'object') {
         return false;
     }
-    if (typeof data['login'] !== 'string' ||
+    if (typeof data['user_id'] !== 'string' ||
         !(0, DomainFingerprint_1.isDomainFingerprint)(data['fingerprint'])) {
         return false;
     }
