@@ -5,6 +5,7 @@ import { throwAssertError } from '../_helpers/lib/throwAssertError';
 
 export enum NotificationType {
     CONNECTED               = 'con',
+    CONNECTING              = 'cong',
     DISCONNECTED            = 'dis',
     TOKENS_UPDATE           = 'tkn',
     MESSAGE                 = 'msg',

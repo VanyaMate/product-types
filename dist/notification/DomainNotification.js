@@ -5,6 +5,7 @@ var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
 var NotificationType;
 (function (NotificationType) {
     NotificationType["CONNECTED"] = "con";
+    NotificationType["CONNECTING"] = "cong";
     NotificationType["DISCONNECTED"] = "dis";
     NotificationType["TOKENS_UPDATE"] = "tkn";
     NotificationType["MESSAGE"] = "msg";
