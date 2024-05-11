@@ -3,7 +3,7 @@ import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
 
 
-export enum NotificationType {
+export enum DomainNotificationType {
     CONNECTED               = 'con',
     CONNECTING              = 'cong',
     DISCONNECTED            = 'dis',
@@ -19,7 +19,7 @@ export enum NotificationType {
 
 export type DomainNotification = {
     dateMs: number;
-    type: NotificationType;
+    type: DomainNotificationType;
     data: string;
 }
 

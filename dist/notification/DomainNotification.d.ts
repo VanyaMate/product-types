@@ -1,6 +1,6 @@
 import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
-export declare enum NotificationType {
+export declare enum DomainNotificationType {
     CONNECTED = "con",
     CONNECTING = "cong",
     DISCONNECTED = "dis",
@@ -15,7 +15,7 @@ export declare enum NotificationType {
 }
 export type DomainNotification = {
     dateMs: number;
-    type: NotificationType;
+    type: DomainNotificationType;
     data: string;
 };
 export declare const isDomainNotification: TypeGuard<DomainNotification>;

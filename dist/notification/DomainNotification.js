@@ -1,21 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.assertDomainNotification = exports.isDomainNotification = exports.NotificationType = void 0;
+exports.assertDomainNotification = exports.isDomainNotification = exports.DomainNotificationType = void 0;
 var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
-var NotificationType;
-(function (NotificationType) {
-    NotificationType["CONNECTED"] = "con";
-    NotificationType["CONNECTING"] = "cong";
-    NotificationType["DISCONNECTED"] = "dis";
-    NotificationType["TOKENS_UPDATE"] = "tkn";
-    NotificationType["MESSAGE"] = "msg";
-    NotificationType["MESSAGE_DELETED"] = "msg_d";
-    NotificationType["MESSAGE_REDACTED"] = "msg_r";
-    NotificationType["MESSAGE_READ"] = "msg_read";
-    NotificationType["FRIEND_REQUEST"] = "fr_r";
-    NotificationType["FRIEND_REQUEST_ACCEPTED"] = "fr_ra";
-    NotificationType["FRIEND_REQUEST_CANCELED"] = "fr_rc";
-})(NotificationType || (exports.NotificationType = NotificationType = {}));
+var DomainNotificationType;
+(function (DomainNotificationType) {
+    DomainNotificationType["CONNECTED"] = "con";
+    DomainNotificationType["CONNECTING"] = "cong";
+    DomainNotificationType["DISCONNECTED"] = "dis";
+    DomainNotificationType["TOKENS_UPDATE"] = "tkn";
+    DomainNotificationType["MESSAGE"] = "msg";
+    DomainNotificationType["MESSAGE_DELETED"] = "msg_d";
+    DomainNotificationType["MESSAGE_REDACTED"] = "msg_r";
+    DomainNotificationType["MESSAGE_READ"] = "msg_read";
+    DomainNotificationType["FRIEND_REQUEST"] = "fr_r";
+    DomainNotificationType["FRIEND_REQUEST_ACCEPTED"] = "fr_ra";
+    DomainNotificationType["FRIEND_REQUEST_CANCELED"] = "fr_rc";
+})(DomainNotificationType || (exports.DomainNotificationType = DomainNotificationType = {}));
 var isDomainNotification = function (data) {
     if (typeof data !== 'object') {
         return false;
