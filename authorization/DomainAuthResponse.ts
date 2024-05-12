@@ -2,6 +2,7 @@ import { TypeGuard } from '../_helpers/types/guard.types';
 import { DomainUser, isDomainUser } from '../user/DomainUser';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
+import { isObject } from '../_helpers/lib/isObject';
 
 
 export type DomainAuthResponse = {
@@ -10,7 +11,7 @@ export type DomainAuthResponse = {
 }
 
 export const isDomainAuthResponse: TypeGuard<DomainAuthResponse> = function (data: unknown): data is DomainAuthResponse {
-    if (typeof data !== 'object') {
+    if (!isObject(data)) {
         return false;
     }
 

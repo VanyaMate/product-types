@@ -1,6 +1,7 @@
 import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
+import { isObject } from '../_helpers/lib/isObject';
 
 
 export type DomainRegistrationData = {
@@ -11,7 +12,7 @@ export type DomainRegistrationData = {
 }
 
 export const isDomainRegistrationData: TypeGuard<DomainRegistrationData> = function (data: unknown): data is DomainRegistrationData {
-    if (typeof data !== 'object') {
+    if (!isObject(data)) {
         return false;
     }
 

@@ -3,8 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.assertDomainAuthResponse = exports.isDomainAuthResponse = void 0;
 var DomainUser_1 = require("../user/DomainUser");
 var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
+var isObject_1 = require("../_helpers/lib/isObject");
 var isDomainAuthResponse = function (data) {
-    if (typeof data !== 'object') {
+    if (!(0, isObject_1.isObject)(data)) {
         return false;
     }
     if (!Array.isArray(data['tokens']) ||

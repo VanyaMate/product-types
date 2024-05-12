@@ -2,6 +2,7 @@ import { DomainFingerprint, isDomainFingerprint } from '../fingerprint/DomainFin
 import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
+import { isObject } from '../_helpers/lib/isObject';
 
 
 export type DomainTokenGenerateData = {
@@ -10,7 +11,7 @@ export type DomainTokenGenerateData = {
 }
 
 export const isDomainTokenGenerateData: TypeGuard<DomainTokenGenerateData> = function (data: unknown): data is DomainTokenGenerateData {
-    if (typeof data !== 'object') {
+    if (!isObject(data)) {
         return false;
     }
 

@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.assertDomainNotification = exports.isDomainNotification = exports.DomainNotificationType = void 0;
 var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
+var isObject_1 = require("../_helpers/lib/isObject");
 var DomainNotificationType;
 (function (DomainNotificationType) {
     DomainNotificationType["ERROR"] = "err";
@@ -19,7 +20,7 @@ var DomainNotificationType;
     DomainNotificationType["FRIEND_REQUEST_CANCELED"] = "fr_rc";
 })(DomainNotificationType || (exports.DomainNotificationType = DomainNotificationType = {}));
 var isDomainNotification = function (data) {
-    if (typeof data !== 'object') {
+    if (!(0, isObject_1.isObject)(data)) {
         return false;
     }
     if (typeof data['dateMs'] !== 'number' ||

@@ -1,6 +1,7 @@
 import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
+import { isObject } from '../_helpers/lib/isObject';
 
 
 export type DomainSimpleError = {
@@ -8,7 +9,7 @@ export type DomainSimpleError = {
 }
 
 export const isDomainSimpleError: TypeGuard<DomainSimpleError> = function (data: unknown): data is DomainSimpleError {
-    if (typeof data !== 'object') {
+    if (!isObject(data)) {
         return false;
     }
 

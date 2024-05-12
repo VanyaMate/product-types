@@ -1,6 +1,7 @@
 import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
+import { isObject } from '../_helpers/lib/isObject';
 
 
 export enum DomainNotificationType {
@@ -26,7 +27,7 @@ export type DomainNotification = {
 }
 
 export const isDomainNotification: TypeGuard<DomainNotification> = function (data: unknown): data is DomainNotification {
-    if (typeof data !== 'object') {
+    if (!isObject(data)) {
         return false;
     }
 

@@ -7,6 +7,7 @@ import {
 } from './DomainUserContactsInfo';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
+import { isObject } from '../_helpers/lib/isObject';
 
 
 export type DomainUserFull =
@@ -17,7 +18,7 @@ export type DomainUserFull =
     };
 
 export const isDomainUserFull: TypeGuard<DomainUserFull> = function (data: unknown): data is DomainUserFull {
-    if (typeof data !== 'object') {
+    if (!isObject(data)) {
         return false;
     }
 

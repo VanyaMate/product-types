@@ -5,8 +5,9 @@ var DomainUser_1 = require("./DomainUser");
 var DomainUserNameInfo_1 = require("./DomainUserNameInfo");
 var DomainUserContactsInfo_1 = require("./DomainUserContactsInfo");
 var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
+var isObject_1 = require("../_helpers/lib/isObject");
 var isDomainUserFull = function (data) {
-    if (typeof data !== 'object') {
+    if (!(0, isObject_1.isObject)(data)) {
         return false;
     }
     if (!(0, DomainUser_1.isDomainUser)(data) ||

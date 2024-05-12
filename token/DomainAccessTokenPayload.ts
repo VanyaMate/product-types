@@ -1,6 +1,7 @@
 import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
+import { isObject } from '../_helpers/lib/isObject';
 
 
 export type DomainAccessTokenPayload = {
@@ -9,7 +10,7 @@ export type DomainAccessTokenPayload = {
 }
 
 export const isDomainAccessTokenPayload: TypeGuard<DomainAccessTokenPayload> = function (data: unknown): data is DomainAccessTokenPayload {
-    if (typeof data !== 'object') {
+    if (!isObject(data)) {
         return false;
     }
 
