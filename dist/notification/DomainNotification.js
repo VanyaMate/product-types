@@ -4,6 +4,7 @@ exports.assertDomainNotification = exports.isDomainNotification = exports.Domain
 var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
 var DomainNotificationType;
 (function (DomainNotificationType) {
+    DomainNotificationType["UNKNOWN"] = "unk";
     DomainNotificationType["CONNECTED"] = "con";
     DomainNotificationType["CONNECTING"] = "cong";
     DomainNotificationType["DISCONNECTED"] = "dis";

@@ -1,6 +1,7 @@
 import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 export declare enum DomainNotificationType {
+    UNKNOWN = "unk",
     CONNECTED = "con",
     CONNECTING = "cong",
     DISCONNECTED = "dis",
