@@ -4,6 +4,7 @@ import { throwAssertError } from '../_helpers/lib/throwAssertError';
 
 
 export enum DomainNotificationType {
+    ERROR                   = 'err',
     UNKNOWN                 = 'unk',
     CONNECTED               = 'con',
     CONNECTING              = 'cong',
