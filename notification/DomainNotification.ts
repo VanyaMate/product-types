@@ -34,7 +34,7 @@ export const isDomainNotification: TypeGuard<DomainNotification> = function (dat
     if (
         typeof data['dateMs'] !== 'number' ||
         typeof data['type'] !== 'string' ||
-        typeof data['data'] !== 'string'
+        typeof data['data'] !== 'undefined'
     ) {
         return false;
     }
