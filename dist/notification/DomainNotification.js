@@ -25,7 +25,7 @@ var isDomainNotification = function (data) {
     }
     if (typeof data['dateMs'] !== 'number' ||
         typeof data['type'] !== 'string' ||
-        typeof data['data'] !== 'undefined') {
+        typeof data['data'] === 'undefined') {
         return false;
     }
     return true;
