@@ -23,7 +23,8 @@ var isDomainNotification = function (data) {
     if (!(0, isObject_1.isObject)(data)) {
         return false;
     }
-    if (typeof data['dateMs'] !== 'number' ||
+    if (typeof data['id'] !== 'string' ||
+        typeof data['dateMs'] !== 'number' ||
         typeof data['type'] !== 'string' ||
         typeof data['data'] === 'undefined') {
         return false;

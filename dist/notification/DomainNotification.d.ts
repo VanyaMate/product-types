@@ -16,6 +16,7 @@ export declare enum DomainNotificationType {
     FRIEND_REQUEST_CANCELED = "fr_rc"
 }
 export type DomainNotification = {
+    id: string;
     dateMs: number;
     type: DomainNotificationType;
     data: unknown;
