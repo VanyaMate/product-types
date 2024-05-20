@@ -22,7 +22,7 @@ export enum DomainNotificationType {
 
 export type DomainNotification = {
     id: string;
-    dateMs: number;
+    creationDate: string;
     type: DomainNotificationType;
     data: unknown;
 }
@@ -34,7 +34,7 @@ export const isDomainNotification: TypeGuard<DomainNotification> = function (dat
 
     if (
         typeof data['id'] !== 'string' ||
-        typeof data['dateMs'] !== 'number' ||
+        typeof data['creationDate'] !== 'string' ||
         typeof data['type'] !== 'string' ||
         typeof data['data'] === 'undefined'
     ) {

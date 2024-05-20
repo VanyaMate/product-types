@@ -17,7 +17,7 @@ export declare enum DomainNotificationType {
 }
 export type DomainNotification = {
     id: string;
-    dateMs: number;
+    creationDate: string;
     type: DomainNotificationType;
     data: unknown;
 };
