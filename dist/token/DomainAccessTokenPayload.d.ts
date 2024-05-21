@@ -1,7 +1,7 @@
 import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 export type DomainAccessTokenPayload = {
-    user_id: string;
+    userId: string;
     id: string;
 };
 export declare const isDomainAccessTokenPayload: TypeGuard<DomainAccessTokenPayload>;

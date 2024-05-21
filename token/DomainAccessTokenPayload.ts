@@ -5,7 +5,7 @@ import { isObject } from '../_helpers/lib/isObject';
 
 
 export type DomainAccessTokenPayload = {
-    user_id: string;
+    userId: string;
     id: string;
 }
 
@@ -15,7 +15,7 @@ export const isDomainAccessTokenPayload: TypeGuard<DomainAccessTokenPayload> = f
     }
 
     if (
-        typeof data['user_id'] !== 'string' ||
+        typeof data['userId'] !== 'string' ||
         typeof data['id'] !== 'string'
     ) {
         return false;

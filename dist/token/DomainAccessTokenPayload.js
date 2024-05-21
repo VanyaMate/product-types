@@ -7,7 +7,7 @@ var isDomainAccessTokenPayload = function (data) {
     if (!(0, isObject_1.isObject)(data)) {
         return false;
     }
-    if (typeof data['user_id'] !== 'string' ||
+    if (typeof data['userId'] !== 'string' ||
         typeof data['id'] !== 'string') {
         return false;
     }

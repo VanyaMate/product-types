@@ -1,4 +1,7 @@
-import { DomainFingerprint, isDomainFingerprint } from '../fingerprint/DomainFingerprint';
+import {
+    DomainFingerprint,
+    isDomainFingerprint,
+} from '../fingerprint/DomainFingerprint';
 import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
@@ -6,7 +9,7 @@ import { isObject } from '../_helpers/lib/isObject';
 
 
 export type DomainTokenGenerateData = {
-    user_id: string;
+    userId: string;
     fingerprint: DomainFingerprint;
 }
 
@@ -16,7 +19,7 @@ export const isDomainTokenGenerateData: TypeGuard<DomainTokenGenerateData> = fun
     }
 
     if (
-        typeof data['user_id'] !== 'string' ||
+        typeof data['userId'] !== 'string' ||
         !isDomainFingerprint(data['fingerprint'])
     ) {
         return false;
