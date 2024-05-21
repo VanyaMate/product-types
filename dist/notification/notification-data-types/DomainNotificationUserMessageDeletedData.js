@@ -9,6 +9,7 @@ var isDomainNotificationUserMessageDeletedData = function (data) {
         return false;
     }
     if (typeof data['message'] !== 'string' ||
+        typeof data['messageIndex'] !== 'string' ||
         !(0, DomainUser_1.isDomainUser)(data['user'])) {
         return false;
     }

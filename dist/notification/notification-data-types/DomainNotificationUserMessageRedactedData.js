@@ -10,6 +10,7 @@ var isDomainNotificationUserMessageRedactedData = function (data) {
     }
     if (typeof data['previousMessage'] !== 'string' ||
         typeof data['newMessage'] !== 'string' ||
+        typeof data['messageIndex'] !== 'string' ||
         !(0, DomainUser_1.isDomainUser)(data['user'])) {
         return false;
     }

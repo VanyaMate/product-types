@@ -8,6 +8,7 @@ import { DomainUser, isDomainUser } from '../../user/DomainUser';
 export type DomainNotificationUserMessageDeletedData = {
     user: DomainUser;
     message: string;
+    messageIndex: string;
 }
 
 export const isDomainNotificationUserMessageDeletedData: TypeGuard<DomainNotificationUserMessageDeletedData> = function (data: unknown): data is DomainNotificationUserMessageDeletedData {
@@ -17,6 +18,7 @@ export const isDomainNotificationUserMessageDeletedData: TypeGuard<DomainNotific
 
     if (
         typeof data['message'] !== 'string' ||
+        typeof data['messageIndex'] !== 'string' ||
         !isDomainUser(data['user'])
     ) {
         return false;

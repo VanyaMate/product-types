@@ -8,8 +8,7 @@ var isDomainNotificationFriendDeletedData = function (data) {
     if (!(0, isObject_1.isObject)(data)) {
         return false;
     }
-    if (!(0, DomainUser_1.isDomainUser)(data['user']) ||
-        typeof data['message'] !== 'string') {
+    if (!(0, DomainUser_1.isDomainUser)(data['user'])) {
         return false;
     }
     return true;

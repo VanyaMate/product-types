@@ -5,6 +5,7 @@ export type DomainNotificationUserMessageRedactedData = {
     user: DomainUser;
     previousMessage: string;
     newMessage: string;
+    messageIndex: string;
 };
 export declare const isDomainNotificationUserMessageRedactedData: TypeGuard<DomainNotificationUserMessageRedactedData>;
 export declare const assertDomainNotificationUserMessageRedactedData: TypeAssert<DomainNotificationUserMessageRedactedData>;

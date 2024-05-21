@@ -9,6 +9,7 @@ export type DomainNotificationUserMessageRedactedData = {
     user: DomainUser;
     previousMessage: string;
     newMessage: string;
+    messageIndex: string;
 }
 
 export const isDomainNotificationUserMessageRedactedData: TypeGuard<DomainNotificationUserMessageRedactedData> = function (data: unknown): data is DomainNotificationUserMessageRedactedData {
@@ -19,6 +20,7 @@ export const isDomainNotificationUserMessageRedactedData: TypeGuard<DomainNotifi
     if (
         typeof data['previousMessage'] !== 'string' ||
         typeof data['newMessage'] !== 'string' ||
+        typeof data['messageIndex'] !== 'string' ||
         !isDomainUser(data['user'])
     ) {
         return false;
