@@ -5,13 +5,13 @@ import { throwAssertError } from '../../_helpers/lib/throwAssertError';
 import { DomainUser, isDomainUser } from '../../user/DomainUser';
 
 
-export type DomainNotificationMessageRedactedData = {
-    where: DomainUser;
+export type DomainNotificationUserMessageRedactedData = {
+    user: DomainUser;
     previousMessage: string;
     newMessage: string;
 }
 
-export const isDomainNotificationMessageRedactedData: TypeGuard<DomainNotificationMessageRedactedData> = function (data: unknown): data is DomainNotificationMessageRedactedData {
+export const isDomainNotificationUserMessageRedactedData: TypeGuard<DomainNotificationUserMessageRedactedData> = function (data: unknown): data is DomainNotificationUserMessageRedactedData {
     if (!isObject(data)) {
         return false;
     }
@@ -19,7 +19,7 @@ export const isDomainNotificationMessageRedactedData: TypeGuard<DomainNotificati
     if (
         typeof data['previousMessage'] !== 'string' ||
         typeof data['newMessage'] !== 'string' ||
-        !isDomainUser(data['where'])
+        !isDomainUser(data['user'])
     ) {
         return false;
     }
@@ -27,8 +27,8 @@ export const isDomainNotificationMessageRedactedData: TypeGuard<DomainNotificati
     return true;
 };
 
-export const assertDomainNotificationMessageRedactedData: TypeAssert<DomainNotificationMessageRedactedData> = function (data: unknown, variableName: string, typeName: string) {
-    if (!isDomainNotificationMessageRedactedData(data)) {
+export const assertDomainNotificationUserMessageRedactedData: TypeAssert<DomainNotificationUserMessageRedactedData> = function (data: unknown, variableName: string, typeName: string) {
+    if (!isDomainNotificationUserMessageRedactedData(data)) {
         throwAssertError(variableName, typeName);
     }
 };

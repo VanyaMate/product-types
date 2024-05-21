@@ -5,19 +5,19 @@ import { throwAssertError } from '../../_helpers/lib/throwAssertError';
 import { DomainUser, isDomainUser } from '../../user/DomainUser';
 
 
-export type DomainNotificationMessageData = {
-    from: DomainUser;
+export type DomainNotificationUserMessageData = {
+    user: DomainUser;
     message: string;
 }
 
-export const isDomainNotificationMessageData: TypeGuard<DomainNotificationMessageData> = function (data: unknown): data is DomainNotificationMessageData {
+export const isDomainNotificationUserMessageData: TypeGuard<DomainNotificationUserMessageData> = function (data: unknown): data is DomainNotificationUserMessageData {
     if (!isObject(data)) {
         return false;
     }
 
     if (
         typeof data['message'] !== 'string' ||
-        !isDomainUser(data['from'])
+        !isDomainUser(data['user'])
     ) {
         return false;
     }
@@ -25,8 +25,8 @@ export const isDomainNotificationMessageData: TypeGuard<DomainNotificationMessag
     return true;
 };
 
-export const assertDomainNotificationMessageData: TypeAssert<DomainNotificationMessageData> = function (data: unknown, variableName: string, typeName: string) {
-    if (!isDomainNotificationMessageData(data)) {
+export const assertDomainNotificationUserMessageData: TypeAssert<DomainNotificationUserMessageData> = function (data: unknown, variableName: string, typeName: string) {
+    if (!isDomainNotificationUserMessageData(data)) {
         throwAssertError(variableName, typeName);
     }
 };

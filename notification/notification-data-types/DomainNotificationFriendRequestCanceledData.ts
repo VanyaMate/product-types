@@ -6,7 +6,7 @@ import { DomainUser, isDomainUser } from '../../user/DomainUser';
 
 
 export type DomainNotificationFriendRequestCanceledData = {
-    from: DomainUser;
+    user: DomainUser;
 }
 
 export const isDomainNotificationFriendRequestCanceledData: TypeGuard<DomainNotificationFriendRequestCanceledData> = function (data: unknown): data is DomainNotificationFriendRequestCanceledData {
@@ -14,7 +14,7 @@ export const isDomainNotificationFriendRequestCanceledData: TypeGuard<DomainNoti
         return false;
     }
 
-    if (!isDomainUser(data['from'])) {
+    if (!isDomainUser(data['user'])) {
         return false;
     }
 

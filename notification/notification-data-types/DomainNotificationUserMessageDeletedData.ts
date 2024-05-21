@@ -5,19 +5,19 @@ import { TypeAssert } from '../../_helpers/types/assert.types';
 import { DomainUser, isDomainUser } from '../../user/DomainUser';
 
 
-export type DomainNotificationMessageDeletedData = {
-    where: DomainUser;
+export type DomainNotificationUserMessageDeletedData = {
+    user: DomainUser;
     message: string;
 }
 
-export const isDomainNotificationMessageDeletedData: TypeGuard<DomainNotificationMessageDeletedData> = function (data: unknown): data is DomainNotificationMessageDeletedData {
+export const isDomainNotificationUserMessageDeletedData: TypeGuard<DomainNotificationUserMessageDeletedData> = function (data: unknown): data is DomainNotificationUserMessageDeletedData {
     if (!isObject(data)) {
         return false;
     }
 
     if (
         typeof data['message'] !== 'string' ||
-        !isDomainUser(data['where'])
+        !isDomainUser(data['user'])
     ) {
         return false;
     }
@@ -25,8 +25,8 @@ export const isDomainNotificationMessageDeletedData: TypeGuard<DomainNotificatio
     return true;
 };
 
-export const assertDomainNotificationMessageDeletedData: TypeAssert<DomainNotificationMessageDeletedData> = function (data: unknown, variableName: string, typeName: string) {
-    if (!isDomainNotificationMessageDeletedData(data)) {
+export const assertDomainNotificationUserMessageDeletedData: TypeAssert<DomainNotificationUserMessageDeletedData> = function (data: unknown, variableName: string, typeName: string) {
+    if (!isDomainNotificationUserMessageDeletedData(data)) {
         throwAssertError(variableName, typeName);
     }
 };

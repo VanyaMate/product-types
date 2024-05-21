@@ -6,7 +6,7 @@ import { DomainUser, isDomainUser } from '../../user/DomainUser';
 
 
 export type DomainNotificationFriendRequestAcceptedData = {
-    from: DomainUser;
+    user: DomainUser;
 }
 
 export const isDomainNotificationFriendRequestAcceptedData: TypeGuard<DomainNotificationFriendRequestAcceptedData> = function (data: unknown): data is DomainNotificationFriendRequestAcceptedData {
@@ -14,7 +14,7 @@ export const isDomainNotificationFriendRequestAcceptedData: TypeGuard<DomainNoti
         return false;
     }
 
-    if (!isDomainUser(data['from'])) {
+    if (!isDomainUser(data['user'])) {
         return false;
     }
 

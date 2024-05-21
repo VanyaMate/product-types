@@ -7,11 +7,12 @@ export declare enum DomainNotificationType {
     CONNECTING = "cong",
     DISCONNECTED = "dis",
     TOKENS_UPDATE = "tkn",
-    MESSAGE = "msg",
-    MESSAGE_DELETED = "msg_d",
-    MESSAGE_REDACTED = "msg_r",
-    MESSAGE_READ = "msg_read",
+    USER_MESSAGE = "u_msg",
+    USER_MESSAGE_DELETED = "u_msg_d",
+    USER_MESSAGE_REDACTED = "u_msg_r",
+    USER_MESSAGE_READ = "u_msg_read",
     FRIEND_REQUEST = "fr_r",
+    FRIEND_DELETED = "fr_d",
     FRIEND_REQUEST_ACCEPTED = "fr_ra",
     FRIEND_REQUEST_CANCELED = "fr_rc"
 }
