@@ -9,7 +9,8 @@ var isDomainNotificationFriendRequestData = function (data) {
         return false;
     }
     if (!(0, DomainUser_1.isDomainUser)(data['user']) ||
-        typeof data['message'] !== 'string') {
+        typeof data['message'] !== 'string' ||
+        typeof data['requestId'] !== 'string') {
         return false;
     }
     return true;
