@@ -2,12 +2,13 @@ import { isObject } from '../../_helpers/lib/isObject';
 import { TypeGuard } from '../../_helpers/types/guard.types';
 import { TypeAssert } from '../../_helpers/types/assert.types';
 import { throwAssertError } from '../../_helpers/lib/throwAssertError';
-import { DomainUser, isDomainUser } from '../../user/DomainUser';
+import { DomainMessage, isDomainMessage } from '../../message/DomainMessage';
+import { DomainDialogue, isDomainDialogue } from '../../dialog/DomainDialogue';
 
 
 export type DomainNotificationUserMessageData = {
-    user: DomainUser;
-    message: string;
+    dialogue: DomainDialogue;
+    message: DomainMessage;
 }
 
 export const isDomainNotificationUserMessageData: TypeGuard<DomainNotificationUserMessageData> = function (data: unknown): data is DomainNotificationUserMessageData {
@@ -16,8 +17,8 @@ export const isDomainNotificationUserMessageData: TypeGuard<DomainNotificationUs
     }
 
     if (
-        typeof data['message'] !== 'string' ||
-        !isDomainUser(data['user'])
+        !isDomainMessage(data['message']) ||
+        !isDomainDialogue(data['dialogue'])
     ) {
         return false;
     }

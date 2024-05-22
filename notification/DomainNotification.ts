@@ -35,9 +35,15 @@ export const isDomainNotification: TypeGuard<DomainNotification> = function (dat
 
     if (
         typeof data['id'] !== 'string' ||
-        typeof data['creationDate'] !== 'string' ||
         typeof data['type'] !== 'string' ||
-        typeof data['data'] === 'undefined'
+        typeof data['data'] === 'undefined' ||
+        !(
+            typeof data['creationDate'] === 'string' ||
+            (
+                isObject(data['creationDate']) &&
+                typeof data['creationDate']['toUTCString'] === 'function'
+            )
+        )
     ) {
         return false;
     }

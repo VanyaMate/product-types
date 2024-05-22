@@ -3,13 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.assertDomainNotificationUserMessageData = exports.isDomainNotificationUserMessageData = void 0;
 var isObject_1 = require("../../_helpers/lib/isObject");
 var throwAssertError_1 = require("../../_helpers/lib/throwAssertError");
-var DomainUser_1 = require("../../user/DomainUser");
+var DomainMessage_1 = require("../../message/DomainMessage");
+var DomainDialogue_1 = require("../../dialog/DomainDialogue");
 var isDomainNotificationUserMessageData = function (data) {
     if (!(0, isObject_1.isObject)(data)) {
         return false;
     }
-    if (typeof data['message'] !== 'string' ||
-        !(0, DomainUser_1.isDomainUser)(data['user'])) {
+    if (!(0, DomainMessage_1.isDomainMessage)(data['message']) ||
+        !(0, DomainDialogue_1.isDomainDialogue)(data['dialogue'])) {
         return false;
     }
     return true;

@@ -6,19 +6,23 @@ import { DomainUser } from '../user/DomainUser';
 import { DomainMessage } from '../message/DomainMessage';
 
 
-export type DomainDialog = {
+export type DomainDialogue = {
     id: string;
+    title: string;
+    avatar: string;
     users: DomainUser[];
     messages: DomainMessage[];
 }
 
-export const isDomainDialog: TypeGuard<DomainDialog> = function (data: unknown): data is DomainDialog {
+export const isDomainDialogue: TypeGuard<DomainDialogue> = function (data: unknown): data is DomainDialogue {
     if (!isObject(data)) {
         return false;
     }
 
     if (
         typeof data['id'] !== 'string' ||
+        typeof data['title'] !== 'string' ||
+        typeof data['avatar'] !== 'string' ||
         !Array.isArray(data['users']) ||
         !Array.isArray(data['messages'])
     ) {
@@ -28,8 +32,8 @@ export const isDomainDialog: TypeGuard<DomainDialog> = function (data: unknown):
     return true;
 };
 
-export const assertDomainDialog: TypeAssert<DomainDialog> = function (data: unknown, variableName: string, typeName: string) {
-    if (!isDomainDialog(data)) {
+export const assertDomainDialogue: TypeAssert<DomainDialogue> = function (data: unknown, variableName: string, typeName: string) {
+    if (!isDomainDialogue(data)) {
         throwAssertError(variableName, typeName);
     }
 };
