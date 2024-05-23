@@ -27,6 +27,7 @@ var isDomainNotification = function (data) {
     if (typeof data['id'] !== 'string' ||
         typeof data['type'] !== 'string' ||
         typeof data['data'] === 'undefined' ||
+        typeof data['viewed'] === 'boolean' ||
         !(typeof data['creationDate'] === 'string' ||
             ((0, isObject_1.isObject)(data['creationDate']) &&
                 typeof data['creationDate']['toUTCString'] === 'function'))) {

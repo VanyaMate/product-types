@@ -25,6 +25,7 @@ export type DomainNotification = {
     id: string;
     creationDate: string;
     type: DomainNotificationType;
+    viewed: boolean;
     data: unknown;
 }
 
@@ -37,6 +38,7 @@ export const isDomainNotification: TypeGuard<DomainNotification> = function (dat
         typeof data['id'] !== 'string' ||
         typeof data['type'] !== 'string' ||
         typeof data['data'] === 'undefined' ||
+        typeof data['viewed'] === 'boolean' ||
         !(
             typeof data['creationDate'] === 'string' ||
             (

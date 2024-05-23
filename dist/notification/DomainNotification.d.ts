@@ -20,6 +20,7 @@ export type DomainNotification = {
     id: string;
     creationDate: string;
     type: DomainNotificationType;
+    viewed: boolean;
     data: unknown;
 };
 export declare const isDomainNotification: TypeGuard<DomainNotification>;
