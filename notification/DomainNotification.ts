@@ -35,10 +35,11 @@ export const isDomainNotification: TypeGuard<DomainNotification> = function (dat
     }
 
     if (
+        typeof data['data'] === 'undefined' ||
+
         typeof data['id'] !== 'string' ||
         typeof data['type'] !== 'string' ||
-        typeof data['data'] === 'undefined' ||
-        typeof data['viewed'] === 'boolean' ||
+        typeof data['viewed'] !== 'boolean' ||
         !(
             typeof data['creationDate'] === 'string' ||
             (
