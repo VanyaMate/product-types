@@ -18,7 +18,7 @@ export const isDomainNotificationFriendRequestData: TypeGuard<DomainNotification
     }
 
     if (
-        isDomainFriendRequest(data['request'])
+        !isDomainFriendRequest(data['request'])
     ) {
         return false;
     }

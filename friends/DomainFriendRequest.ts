@@ -8,7 +8,7 @@ import { throwAssertError } from '../_helpers/lib/throwAssertError';
 export type DomainFriendRequest = {
     user: DomainUser;
     requestId: string;
-    message?: string;
+    message: string;
 }
 
 export const isDomainFriendRequest: TypeGuard<DomainFriendRequest> = function (data: unknown): data is DomainFriendRequest {
@@ -19,10 +19,7 @@ export const isDomainFriendRequest: TypeGuard<DomainFriendRequest> = function (d
     if (
         !isDomainUser(data['user']) ||
         typeof data['requestId'] !== 'string' ||
-        (
-            typeof data['message'] !== 'undefined' &&
-            typeof data['message'] !== 'string'
-        )
+        typeof data['message'] !== 'string'
     ) {
         return false;
     }
