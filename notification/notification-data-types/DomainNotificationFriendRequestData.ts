@@ -2,13 +2,14 @@ import { throwAssertError } from '../../_helpers/lib/throwAssertError';
 import { TypeGuard } from '../../_helpers/types/guard.types';
 import { isObject } from '../../_helpers/lib/isObject';
 import { TypeAssert } from '../../_helpers/types/assert.types';
-import { DomainUser, isDomainUser } from '../../user/DomainUser';
+import {
+    DomainFriendRequest,
+    isDomainFriendRequest,
+} from '../../friends/DomainFriendRequest';
 
 
 export type DomainNotificationFriendRequestData = {
-    user: DomainUser;
-    requestId: string;
-    message: string;
+    request: DomainFriendRequest;
 }
 
 export const isDomainNotificationFriendRequestData: TypeGuard<DomainNotificationFriendRequestData> = function (data: unknown): data is DomainNotificationFriendRequestData {
@@ -17,9 +18,7 @@ export const isDomainNotificationFriendRequestData: TypeGuard<DomainNotification
     }
 
     if (
-        !isDomainUser(data['user']) ||
-        typeof data['message'] !== 'string' ||
-        typeof data['requestId'] !== 'string'
+        isDomainFriendRequest(data['request'])
     ) {
         return false;
     }

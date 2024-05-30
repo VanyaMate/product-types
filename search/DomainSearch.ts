@@ -6,7 +6,7 @@ import { DomainSearchItem, isDomainSearchItem } from './DomainSearchItem';
 
 
 export type DomainSearch = {
-    profiles?: DomainSearchItem;
+    users?: DomainSearchItem;
 }
 
 export const isDomainSearch: TypeGuard<DomainSearch> = function (data: unknown): data is DomainSearch {
@@ -15,7 +15,7 @@ export const isDomainSearch: TypeGuard<DomainSearch> = function (data: unknown):
     }
 
     if (
-        typeof data['profiles'] !== undefined && !isDomainSearchItem(data['profiles'])
+        typeof data['users'] !== undefined && !isDomainSearchItem(data['users'])
     ) {
         return false;
     }
