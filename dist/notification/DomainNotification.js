@@ -26,6 +26,8 @@ var DomainNotificationType;
     DomainNotificationType["FRIEND_DELETED_IN"] = "fr_d_in";
     DomainNotificationType["FRIEND_DELETED_OUT"] = "fr_d_out";
     DomainNotificationType["FRIEND_REQUEST_ACCEPTED_IN"] = "fr_ra_in";
+    DomainNotificationType["FRIEND_REQUEST_ACCEPTED_OUT"] = "fr_ra_out";
+    DomainNotificationType["FRIEND_REQUEST_CANCELED_IN"] = "fr_rc_in";
     DomainNotificationType["FRIEND_REQUEST_CANCELED_OUT"] = "fr_rc_out";
 })(DomainNotificationType || (exports.DomainNotificationType = DomainNotificationType = {}));
 var isDomainNotification = function (data) {

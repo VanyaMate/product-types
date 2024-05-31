@@ -26,6 +26,8 @@ export enum DomainNotificationType {
     FRIEND_DELETED_IN           = 'fr_d_in',
     FRIEND_DELETED_OUT          = 'fr_d_out',
     FRIEND_REQUEST_ACCEPTED_IN  = 'fr_ra_in',
+    FRIEND_REQUEST_ACCEPTED_OUT = 'fr_ra_out',
+    FRIEND_REQUEST_CANCELED_IN  = 'fr_rc_in',
     FRIEND_REQUEST_CANCELED_OUT = 'fr_rc_out',
 }
 
