@@ -8,7 +8,8 @@ var isDomainNotificationFriendRequestAcceptedData = function (data) {
     if (!(0, isObject_1.isObject)(data)) {
         return false;
     }
-    if (!(0, DomainUser_1.isDomainUser)(data['user'])) {
+    if (!(0, DomainUser_1.isDomainUser)(data['user']) ||
+        typeof data['requestId'] !== 'string') {
         return false;
     }
     return true;

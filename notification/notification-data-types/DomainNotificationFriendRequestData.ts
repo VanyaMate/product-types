@@ -8,18 +8,10 @@ import {
 } from '../../friends/DomainFriendRequest';
 
 
-export type DomainNotificationFriendRequestData = {
-    request: DomainFriendRequest;
-}
+export type DomainNotificationFriendRequestData = DomainFriendRequest;
 
 export const isDomainNotificationFriendRequestData: TypeGuard<DomainNotificationFriendRequestData> = function (data: unknown): data is DomainNotificationFriendRequestData {
-    if (!isObject(data)) {
-        return false;
-    }
-
-    if (
-        !isDomainFriendRequest(data['request'])
-    ) {
+    if (!isDomainFriendRequest(data)) {
         return false;
     }
 

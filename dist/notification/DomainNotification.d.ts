@@ -7,14 +7,20 @@ export declare enum DomainNotificationType {
     CONNECTING = "cong",
     DISCONNECTED = "dis",
     TOKENS_UPDATE = "tkn",
-    USER_MESSAGE = "u_msg",
-    USER_MESSAGE_DELETED = "u_msg_d",
-    USER_MESSAGE_REDACTED = "u_msg_r",
-    USER_MESSAGE_READ = "u_msg_read",
-    FRIEND_REQUEST = "fr_r",
-    FRIEND_DELETED = "fr_d",
-    FRIEND_REQUEST_ACCEPTED = "fr_ra",
-    FRIEND_REQUEST_CANCELED = "fr_rc"
+    USER_MESSAGE_IN = "u_msg_in",
+    USER_MESSAGE_OUT = "u_msg_out",
+    USER_MESSAGE_DELETED_IN = "u_msg_d_in",
+    USER_MESSAGE_DELETED_OUT = "u_msg_d_out",
+    USER_MESSAGE_REDACTED_IN = "u_msg_r_in",
+    USER_MESSAGE_REDACTED_OUT = "u_msg_r_out",
+    USER_MESSAGE_READ_IN = "u_msg_read_in",
+    USER_MESSAGE_READ_OUT = "u_msg_read_out",
+    FRIEND_REQUEST_IN = "fr_r_in",
+    FRIEND_REQUEST_OUT = "fr_r_out",
+    FRIEND_DELETED_IN = "fr_d_in",
+    FRIEND_DELETED_OUT = "fr_d_out",
+    FRIEND_REQUEST_ACCEPTED_IN = "fr_ra_in",
+    FRIEND_REQUEST_CANCELED_OUT = "fr_rc_out"
 }
 export type DomainNotification = {
     id: string;
