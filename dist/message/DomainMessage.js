@@ -15,7 +15,7 @@ var isDomainMessage = function (data) {
         return false;
     }
     if (typeof data['id'] !== 'string' ||
-        typeof data['dialogId'] !== 'string' ||
+        typeof data['dialogueId'] !== 'string' ||
         typeof data['message'] !== 'string' ||
         typeof data['redacted'] !== 'boolean' ||
         typeof data['creationDate'] !== 'string' ||

@@ -8,7 +8,7 @@ export declare enum DomainMessageType {
 }
 export type DomainMessage = {
     id: string;
-    dialogId: string;
+    dialogueId: string;
     message: string;
     redacted: boolean;
     creationDate: string;

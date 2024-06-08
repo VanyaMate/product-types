@@ -13,7 +13,7 @@ export enum DomainMessageType {
 
 export type DomainMessage = {
     id: string;
-    dialogId: string;
+    dialogueId: string;
     message: string;
     redacted: boolean;
     creationDate: string;
@@ -28,7 +28,7 @@ export const isDomainMessage: TypeGuard<DomainMessage> = function (data: unknown
 
     if (
         typeof data['id'] !== 'string' ||
-        typeof data['dialogId'] !== 'string' ||
+        typeof data['dialogueId'] !== 'string' ||
         typeof data['message'] !== 'string' ||
         typeof data['redacted'] !== 'boolean' ||
         typeof data['creationDate'] !== 'string' ||
