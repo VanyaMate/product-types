@@ -9,9 +9,9 @@ import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
 import { isObject } from '../_helpers/lib/isObject';
 import {
-    DomainUserPreferences,
-    isDomainUserPreferences,
-} from './DomainUserPreferences';
+    DomainUserPermissions,
+    isDomainUserPermissions,
+} from './DomainUserPermissions';
 
 
 export type DomainUserFull =
@@ -19,7 +19,7 @@ export type DomainUserFull =
     {
         nameInfo: DomainUserNameInfo;
         contacts: DomainUserContactsInfo;
-        preferences: DomainUserPreferences;
+        permissions: DomainUserPermissions;
     };
 
 export const isDomainUserFull: TypeGuard<DomainUserFull> = function (data: unknown): data is DomainUserFull {
@@ -31,7 +31,7 @@ export const isDomainUserFull: TypeGuard<DomainUserFull> = function (data: unkno
         !isDomainUser(data) ||
         !isDomainUserNameInfo(data['nameInfo']) ||
         !isDomainUserContactsInfo(data['contacts']) ||
-        !isDomainUserPreferences(data['preferences'])
+        !isDomainUserPermissions(data['permissions'])
     ) {
         return false;
     }

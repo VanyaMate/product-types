@@ -4,37 +4,37 @@ import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
 
 
-export enum DomainUserPreferencesFriendRequest {
+export enum DomainUserPermissionsFriendRequest {
     ALL  = 'all',
     NONE = 'none',
 }
 
-export enum DomainUserPreferencesPrivateDialogue {
+export enum DomainUserPermissionsPrivateDialogue {
     ALL     = 'all',
     FRIENDS = 'friends',
     NONE    = 'none',
 }
 
-export enum DomainUserPreferencesDialogue {
+export enum DomainUserPermissionsDialogue {
     ALL     = 'all',
     FRIENDS = 'friends',
     NONE    = 'none',
 }
 
-export enum DomainUserPreferencesGeneralPage {
+export enum DomainUserPermissionsGeneralPage {
     ALL     = 'all',
     FRIENDS = 'friends',
     NONE    = 'none',
 }
 
-export type DomainUserPreferences = {
-    friendRequest: DomainUserPreferencesFriendRequest;
-    privateDialogue: DomainUserPreferencesPrivateDialogue;
-    dialogue: DomainUserPreferencesDialogue;
-    generalPage: DomainUserPreferencesGeneralPage;
+export type DomainUserPermissions = {
+    friendRequest: DomainUserPermissionsFriendRequest;
+    privateDialogue: DomainUserPermissionsPrivateDialogue;
+    dialogue: DomainUserPermissionsDialogue;
+    generalPage: DomainUserPermissionsGeneralPage;
 }
 
-export const isDomainUserPreferences: TypeGuard<DomainUserPreferences> = function (data: unknown): data is DomainUserPreferences {
+export const isDomainUserPermissions: TypeGuard<DomainUserPermissions> = function (data: unknown): data is DomainUserPermissions {
     if (!isObject(data)) {
         return false;
     }
@@ -51,8 +51,8 @@ export const isDomainUserPreferences: TypeGuard<DomainUserPreferences> = functio
     return true;
 };
 
-export const assertDomainUserPreferences: TypeAssert<DomainUserPreferences> = function (data: unknown, variableName: string, typeName: string) {
-    if (!isDomainUserPreferences(data)) {
+export const assertDomainUserPermissions: TypeAssert<DomainUserPermissions> = function (data: unknown, variableName: string, typeName: string) {
+    if (!isDomainUserPermissions(data)) {
         throwAssertError(variableName, typeName);
     }
 };

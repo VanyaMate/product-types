@@ -2,7 +2,6 @@ import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
 import { isObject } from '../_helpers/lib/isObject';
-import { DomainUserPreferences } from './DomainUserPreferences';
 
 
 export type DomainUser = {
