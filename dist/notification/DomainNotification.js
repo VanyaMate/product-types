@@ -4,7 +4,7 @@ exports.assertDomainNotification = exports.isDomainNotification = exports.Domain
 var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
 var isObject_1 = require("../_helpers/lib/isObject");
 // IN - получатель
-// OUT - не получитель
+// OUT - не получатель
 var DomainNotificationType;
 (function (DomainNotificationType) {
     DomainNotificationType["ERROR"] = "err";
@@ -29,6 +29,22 @@ var DomainNotificationType;
     DomainNotificationType["FRIEND_REQUEST_ACCEPTED_OUT"] = "fr_ra_out";
     DomainNotificationType["FRIEND_REQUEST_CANCELED_IN"] = "fr_rc_in";
     DomainNotificationType["FRIEND_REQUEST_CANCELED_OUT"] = "fr_rc_out";
+    DomainNotificationType["DIALOGUE_CREATED_IN"] = "dlg_c_in";
+    DomainNotificationType["DIALOGUE_CREATED_OUT"] = "dlg_c_out";
+    DomainNotificationType["DIALOGUE_UPDATED_IN"] = "dlg_u_in";
+    DomainNotificationType["DIALOGUE_UPDATED_OUT"] = "dlg_u_out";
+    DomainNotificationType["DIALOGUE_DELETED_IN"] = "dlg_d_in";
+    DomainNotificationType["DIALOGUE_DELETED_OUT"] = "dlg_d_out";
+    DomainNotificationType["DIALOGUE_ARCHIVED_IN"] = "dlg_a_in";
+    DomainNotificationType["DIALOGUE_ARCHIVED_OUT"] = "dlg_a_out";
+    DomainNotificationType["PRIVATE_DIALOGUE_CREATED_IN"] = "pdlg_c_in";
+    DomainNotificationType["PRIVATE_DIALOGUE_CREATED_OUT"] = "pdlg_c_out";
+    DomainNotificationType["PRIVATE_DIALOGUE_UPDATED_IN"] = "pdlg_u_in";
+    DomainNotificationType["PRIVATE_DIALOGUE_UPDATED_OUT"] = "pdlg_u_out";
+    DomainNotificationType["PRIVATE_DIALOGUE_DELETED_IN"] = "pdlg_d_in";
+    DomainNotificationType["PRIVATE_DIALOGUE_DELETED_OUT"] = "pdlg_d_out";
+    DomainNotificationType["PRIVATE_DIALOGUE_ARCHIVED_IN"] = "pdlg_a_in";
+    DomainNotificationType["PRIVATE_DIALOGUE_ARCHIVED_OUT"] = "pdlg_a_out";
 })(DomainNotificationType || (exports.DomainNotificationType = DomainNotificationType = {}));
 var isDomainNotification = function (data) {
     if (!(0, isObject_1.isObject)(data)) {

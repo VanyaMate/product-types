@@ -22,7 +22,23 @@ export declare enum DomainNotificationType {
     FRIEND_REQUEST_ACCEPTED_IN = "fr_ra_in",
     FRIEND_REQUEST_ACCEPTED_OUT = "fr_ra_out",
     FRIEND_REQUEST_CANCELED_IN = "fr_rc_in",
-    FRIEND_REQUEST_CANCELED_OUT = "fr_rc_out"
+    FRIEND_REQUEST_CANCELED_OUT = "fr_rc_out",
+    DIALOGUE_CREATED_IN = "dlg_c_in",
+    DIALOGUE_CREATED_OUT = "dlg_c_out",
+    DIALOGUE_UPDATED_IN = "dlg_u_in",
+    DIALOGUE_UPDATED_OUT = "dlg_u_out",
+    DIALOGUE_DELETED_IN = "dlg_d_in",
+    DIALOGUE_DELETED_OUT = "dlg_d_out",
+    DIALOGUE_ARCHIVED_IN = "dlg_a_in",
+    DIALOGUE_ARCHIVED_OUT = "dlg_a_out",
+    PRIVATE_DIALOGUE_CREATED_IN = "pdlg_c_in",
+    PRIVATE_DIALOGUE_CREATED_OUT = "pdlg_c_out",
+    PRIVATE_DIALOGUE_UPDATED_IN = "pdlg_u_in",
+    PRIVATE_DIALOGUE_UPDATED_OUT = "pdlg_u_out",
+    PRIVATE_DIALOGUE_DELETED_IN = "pdlg_d_in",
+    PRIVATE_DIALOGUE_DELETED_OUT = "pdlg_d_out",
+    PRIVATE_DIALOGUE_ARCHIVED_IN = "pdlg_a_in",
+    PRIVATE_DIALOGUE_ARCHIVED_OUT = "pdlg_a_out"
 }
 export type DomainNotification = {
     id: string;
