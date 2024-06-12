@@ -7,12 +7,14 @@ var isObject_1 = require("../_helpers/lib/isObject");
 // OUT - не получатель
 var DomainNotificationType;
 (function (DomainNotificationType) {
+    // Common
     DomainNotificationType["ERROR"] = "err";
     DomainNotificationType["UNKNOWN"] = "unk";
     DomainNotificationType["CONNECTED"] = "con";
     DomainNotificationType["CONNECTING"] = "cong";
     DomainNotificationType["DISCONNECTED"] = "dis";
     DomainNotificationType["TOKENS_UPDATE"] = "tkn";
+    // User message
     DomainNotificationType["USER_MESSAGE_IN"] = "u_msg_in";
     DomainNotificationType["USER_MESSAGE_OUT"] = "u_msg_out";
     DomainNotificationType["USER_MESSAGE_DELETED_IN"] = "u_msg_d_in";
@@ -21,6 +23,7 @@ var DomainNotificationType;
     DomainNotificationType["USER_MESSAGE_REDACTED_OUT"] = "u_msg_r_out";
     DomainNotificationType["USER_MESSAGE_READ_IN"] = "u_msg_read_in";
     DomainNotificationType["USER_MESSAGE_READ_OUT"] = "u_msg_read_out";
+    // Friend request
     DomainNotificationType["FRIEND_REQUEST_IN"] = "fr_r_in";
     DomainNotificationType["FRIEND_REQUEST_OUT"] = "fr_r_out";
     DomainNotificationType["FRIEND_DELETED_IN"] = "fr_d_in";
@@ -29,6 +32,7 @@ var DomainNotificationType;
     DomainNotificationType["FRIEND_REQUEST_ACCEPTED_OUT"] = "fr_ra_out";
     DomainNotificationType["FRIEND_REQUEST_CANCELED_IN"] = "fr_rc_in";
     DomainNotificationType["FRIEND_REQUEST_CANCELED_OUT"] = "fr_rc_out";
+    // Dialogue
     DomainNotificationType["DIALOGUE_CREATED_IN"] = "dlg_c_in";
     DomainNotificationType["DIALOGUE_CREATED_OUT"] = "dlg_c_out";
     DomainNotificationType["DIALOGUE_UPDATED_IN"] = "dlg_u_in";
@@ -37,14 +41,19 @@ var DomainNotificationType;
     DomainNotificationType["DIALOGUE_DELETED_OUT"] = "dlg_d_out";
     DomainNotificationType["DIALOGUE_ARCHIVED_IN"] = "dlg_a_in";
     DomainNotificationType["DIALOGUE_ARCHIVED_OUT"] = "dlg_a_out";
+    // Private dialogue
     DomainNotificationType["PRIVATE_DIALOGUE_CREATED_IN"] = "pdlg_c_in";
     DomainNotificationType["PRIVATE_DIALOGUE_CREATED_OUT"] = "pdlg_c_out";
     DomainNotificationType["PRIVATE_DIALOGUE_UPDATED_IN"] = "pdlg_u_in";
     DomainNotificationType["PRIVATE_DIALOGUE_UPDATED_OUT"] = "pdlg_u_out";
     DomainNotificationType["PRIVATE_DIALOGUE_DELETED_IN"] = "pdlg_d_in";
     DomainNotificationType["PRIVATE_DIALOGUE_DELETED_OUT"] = "pdlg_d_out";
+    DomainNotificationType["PRIVATE_DIALOGUE_UNDELETED_IN"] = "pdlg_du_in";
+    DomainNotificationType["PRIVATE_DIALOGUE_UNDELETED_OUT"] = "pdlg_du_out";
     DomainNotificationType["PRIVATE_DIALOGUE_ARCHIVED_IN"] = "pdlg_a_in";
     DomainNotificationType["PRIVATE_DIALOGUE_ARCHIVED_OUT"] = "pdlg_a_out";
+    DomainNotificationType["PRIVATE_DIALOGUE_UNARCHIVED_IN"] = "pdlg_au_in";
+    DomainNotificationType["PRIVATE_DIALOGUE_UNARCHIVED_OUT"] = "pdlg_au_out";
 })(DomainNotificationType || (exports.DomainNotificationType = DomainNotificationType = {}));
 var isDomainNotification = function (data) {
     if (!(0, isObject_1.isObject)(data)) {
@@ -54,9 +63,7 @@ var isDomainNotification = function (data) {
         typeof data['id'] !== 'string' ||
         typeof data['type'] !== 'string' ||
         typeof data['viewed'] !== 'boolean' ||
-        !(typeof data['creationDate'] === 'string' ||
-            ((0, isObject_1.isObject)(data['creationDate']) &&
-                typeof data['creationDate']['toUTCString'] === 'function'))) {
+        typeof data['creationDate'] === 'string') {
         return false;
     }
     return true;

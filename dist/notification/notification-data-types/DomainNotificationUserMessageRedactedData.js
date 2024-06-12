@@ -4,6 +4,7 @@ exports.assertDomainNotificationUserMessageRedactedData = exports.isDomainNotifi
 var isObject_1 = require("../../_helpers/lib/isObject");
 var throwAssertError_1 = require("../../_helpers/lib/throwAssertError");
 var DomainUser_1 = require("../../user/DomainUser");
+var DomainPrivateDialogue_1 = require("../../private-dialogue/DomainPrivateDialogue");
 var isDomainNotificationUserMessageRedactedData = function (data) {
     if (!(0, isObject_1.isObject)(data)) {
         return false;
@@ -11,7 +12,8 @@ var isDomainNotificationUserMessageRedactedData = function (data) {
     if (typeof data['previousMessage'] !== 'string' ||
         typeof data['newMessage'] !== 'string' ||
         typeof data['messageIndex'] !== 'string' ||
-        !(0, DomainUser_1.isDomainUser)(data['user'])) {
+        !(0, DomainUser_1.isDomainUser)(data['user']) ||
+        !(0, DomainPrivateDialogue_1.isDomainPrivateDialogue)(data['dialogue'])) {
         return false;
     }
     return true;

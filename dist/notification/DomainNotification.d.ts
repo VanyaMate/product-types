@@ -37,8 +37,12 @@ export declare enum DomainNotificationType {
     PRIVATE_DIALOGUE_UPDATED_OUT = "pdlg_u_out",
     PRIVATE_DIALOGUE_DELETED_IN = "pdlg_d_in",
     PRIVATE_DIALOGUE_DELETED_OUT = "pdlg_d_out",
+    PRIVATE_DIALOGUE_UNDELETED_IN = "pdlg_du_in",
+    PRIVATE_DIALOGUE_UNDELETED_OUT = "pdlg_du_out",
     PRIVATE_DIALOGUE_ARCHIVED_IN = "pdlg_a_in",
-    PRIVATE_DIALOGUE_ARCHIVED_OUT = "pdlg_a_out"
+    PRIVATE_DIALOGUE_ARCHIVED_OUT = "pdlg_a_out",
+    PRIVATE_DIALOGUE_UNARCHIVED_IN = "pdlg_au_in",
+    PRIVATE_DIALOGUE_UNARCHIVED_OUT = "pdlg_au_out"
 }
 export type DomainNotification = {
     id: string;

@@ -3,10 +3,14 @@ import { TypeGuard } from '../../_helpers/types/guard.types';
 import { TypeAssert } from '../../_helpers/types/assert.types';
 import { throwAssertError } from '../../_helpers/lib/throwAssertError';
 import { DomainUser, isDomainUser } from '../../user/DomainUser';
+import {
+    DomainPrivateDialogue, isDomainPrivateDialogue,
+} from '../../private-dialogue/DomainPrivateDialogue';
 
 
 export type DomainNotificationUserMessageRedactedData = {
     user: DomainUser;
+    dialogue: DomainPrivateDialogue;
     previousMessage: string;
     newMessage: string;
     messageIndex: string;
@@ -21,7 +25,8 @@ export const isDomainNotificationUserMessageRedactedData: TypeGuard<DomainNotifi
         typeof data['previousMessage'] !== 'string' ||
         typeof data['newMessage'] !== 'string' ||
         typeof data['messageIndex'] !== 'string' ||
-        !isDomainUser(data['user'])
+        !isDomainUser(data['user']) ||
+        !isDomainPrivateDialogue(data['dialogue'])
     ) {
         return false;
     }

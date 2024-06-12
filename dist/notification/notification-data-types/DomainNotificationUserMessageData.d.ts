@@ -1,9 +1,9 @@
 import { TypeGuard } from '../../_helpers/types/guard.types';
 import { TypeAssert } from '../../_helpers/types/assert.types';
 import { DomainMessage } from '../../message/DomainMessage';
-import { DomainDialogue } from '../../dialog/DomainDialogue';
+import { DomainPrivateDialogue } from '../../private-dialogue/DomainPrivateDialogue';
 export type DomainNotificationUserMessageData = {
-    dialogue: DomainDialogue;
+    dialogue: DomainPrivateDialogue;
     message: DomainMessage;
 };
 export declare const isDomainNotificationUserMessageData: TypeGuard<DomainNotificationUserMessageData>;
