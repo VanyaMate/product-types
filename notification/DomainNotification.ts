@@ -25,6 +25,18 @@ export enum DomainNotificationType {
     USER_MESSAGE_READ_IN            = 'u_msg_read_in',
     USER_MESSAGE_READ_OUT           = 'u_msg_read_out',
 
+    // Private message
+    PRIVATE_MESSAGE_IN              = 'p_msg_in',
+    PRIVATE_MESSAGE_OUT             = 'p_msg_out',
+    PRIVATE_MESSAGE_DELETED_IN      = 'p_msg_d_in',
+    PRIVATE_MESSAGE_DELETED_OUT     = 'p_msg_d_out',
+    PRIVATE_MESSAGE_REDACTED_IN     = 'p_msg_r_in',
+    PRIVATE_MESSAGE_REDACTED_OUT    = 'p_msg_r_out',
+    PRIVATE_MESSAGE_READ_IN         = 'p_msg_read_in',
+    PRIVATE_MESSAGE_READ_OUT        = 'p_msg_read_out',
+    PRIVATE_MESSAGE_READ_ALL_IN     = 'p_msg_read_all_in',
+    PRIVATE_MESSAGE_READ_ALL_OUT    = 'p_msg_read_all_out',
+
     // Friend request
     FRIEND_REQUEST_IN               = 'fr_r_in',
     FRIEND_REQUEST_OUT              = 'fr_r_out',
@@ -79,7 +91,7 @@ export const isDomainNotification: TypeGuard<DomainNotification> = function (dat
         typeof data['id'] !== 'string' ||
         typeof data['type'] !== 'string' ||
         typeof data['viewed'] !== 'boolean' ||
-        typeof data['creationDate'] === 'string'
+        typeof data['creationDate'] !== 'string'
     ) {
         return false;
     }

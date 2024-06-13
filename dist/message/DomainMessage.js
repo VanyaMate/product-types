@@ -18,6 +18,7 @@ var isDomainMessage = function (data) {
         typeof data['dialogueId'] !== 'string' ||
         typeof data['message'] !== 'string' ||
         typeof data['redacted'] !== 'boolean' ||
+        typeof data['read'] !== 'boolean' ||
         typeof data['creationDate'] !== 'string' ||
         typeof data['type'] !== 'string' ||
         !(0, DomainUser_1.isDomainUser)(data['author'])) {

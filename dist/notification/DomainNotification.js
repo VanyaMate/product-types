@@ -23,6 +23,17 @@ var DomainNotificationType;
     DomainNotificationType["USER_MESSAGE_REDACTED_OUT"] = "u_msg_r_out";
     DomainNotificationType["USER_MESSAGE_READ_IN"] = "u_msg_read_in";
     DomainNotificationType["USER_MESSAGE_READ_OUT"] = "u_msg_read_out";
+    // Private message
+    DomainNotificationType["PRIVATE_MESSAGE_IN"] = "p_msg_in";
+    DomainNotificationType["PRIVATE_MESSAGE_OUT"] = "p_msg_out";
+    DomainNotificationType["PRIVATE_MESSAGE_DELETED_IN"] = "p_msg_d_in";
+    DomainNotificationType["PRIVATE_MESSAGE_DELETED_OUT"] = "p_msg_d_out";
+    DomainNotificationType["PRIVATE_MESSAGE_REDACTED_IN"] = "p_msg_r_in";
+    DomainNotificationType["PRIVATE_MESSAGE_REDACTED_OUT"] = "p_msg_r_out";
+    DomainNotificationType["PRIVATE_MESSAGE_READ_IN"] = "p_msg_read_in";
+    DomainNotificationType["PRIVATE_MESSAGE_READ_OUT"] = "p_msg_read_out";
+    DomainNotificationType["PRIVATE_MESSAGE_READ_ALL_IN"] = "p_msg_read_all_in";
+    DomainNotificationType["PRIVATE_MESSAGE_READ_ALL_OUT"] = "p_msg_read_all_out";
     // Friend request
     DomainNotificationType["FRIEND_REQUEST_IN"] = "fr_r_in";
     DomainNotificationType["FRIEND_REQUEST_OUT"] = "fr_r_out";
@@ -63,7 +74,7 @@ var isDomainNotification = function (data) {
         typeof data['id'] !== 'string' ||
         typeof data['type'] !== 'string' ||
         typeof data['viewed'] !== 'boolean' ||
-        typeof data['creationDate'] === 'string') {
+        typeof data['creationDate'] !== 'string') {
         return false;
     }
     return true;

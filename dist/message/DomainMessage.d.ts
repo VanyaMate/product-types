@@ -11,6 +11,7 @@ export type DomainMessage = {
     dialogueId: string;
     message: string;
     redacted: boolean;
+    read: boolean;
     creationDate: string;
     type: DomainMessageType;
     author: DomainUser;
