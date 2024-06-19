@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.assertDomainNotificationUserMessageDeletedData = exports.isDomainNotificationPrivateMessageDeletedData = void 0;
+exports.assertDomainNotificationPrivateMessageDeletedData = exports.isDomainNotificationPrivateMessageDeletedData = void 0;
 var throwAssertError_1 = require("../../_helpers/lib/throwAssertError");
 var isObject_1 = require("../../_helpers/lib/isObject");
 var DomainPrivateDialogueWithUser_1 = require("../../private-dialogue/DomainPrivateDialogueWithUser");
@@ -16,9 +16,9 @@ var isDomainNotificationPrivateMessageDeletedData = function (data) {
     return true;
 };
 exports.isDomainNotificationPrivateMessageDeletedData = isDomainNotificationPrivateMessageDeletedData;
-var assertDomainNotificationUserMessageDeletedData = function (data, variableName, typeName) {
+var assertDomainNotificationPrivateMessageDeletedData = function (data, variableName, typeName) {
     if (!(0, exports.isDomainNotificationPrivateMessageDeletedData)(data)) {
         (0, throwAssertError_1.throwAssertError)(variableName, typeName);
     }
 };
-exports.assertDomainNotificationUserMessageDeletedData = assertDomainNotificationUserMessageDeletedData;
+exports.assertDomainNotificationPrivateMessageDeletedData = assertDomainNotificationPrivateMessageDeletedData;

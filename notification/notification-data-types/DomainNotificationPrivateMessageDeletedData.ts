@@ -33,7 +33,7 @@ export const isDomainNotificationPrivateMessageDeletedData: TypeGuard<DomainNoti
     return true;
 };
 
-export const assertDomainNotificationUserMessageDeletedData: TypeAssert<DomainNotificationPrivateMessageDeletedData> = function (data: unknown, variableName: string, typeName: string) {
+export const assertDomainNotificationPrivateMessageDeletedData: TypeAssert<DomainNotificationPrivateMessageDeletedData> = function (data: unknown, variableName: string, typeName: string) {
     if (!isDomainNotificationPrivateMessageDeletedData(data)) {
         throwAssertError(variableName, typeName);
     }

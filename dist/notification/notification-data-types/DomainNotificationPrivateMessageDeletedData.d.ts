@@ -7,4 +7,4 @@ export type DomainNotificationPrivateMessageDeletedData = {
     message: DomainMessage;
 };
 export declare const isDomainNotificationPrivateMessageDeletedData: TypeGuard<DomainNotificationPrivateMessageDeletedData>;
-export declare const assertDomainNotificationUserMessageDeletedData: TypeAssert<DomainNotificationPrivateMessageDeletedData>;
+export declare const assertDomainNotificationPrivateMessageDeletedData: TypeAssert<DomainNotificationPrivateMessageDeletedData>;
