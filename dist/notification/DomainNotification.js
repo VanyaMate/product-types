@@ -65,6 +65,13 @@ var DomainNotificationType;
     DomainNotificationType["PRIVATE_DIALOGUE_ARCHIVED_OUT"] = "pdlg_a_out";
     DomainNotificationType["PRIVATE_DIALOGUE_UNARCHIVED_IN"] = "pdlg_au_in";
     DomainNotificationType["PRIVATE_DIALOGUE_UNARCHIVED_OUT"] = "pdlg_au_out";
+    // Post
+    DomainNotificationType["POST_CREATED_IN"] = "pt_c_in";
+    DomainNotificationType["POST_CREATED_OUT"] = "pt_c_out";
+    DomainNotificationType["POST_UPDATED_IN"] = "pt_u_in";
+    DomainNotificationType["POST_UPDATED_OUT"] = "pt_u_out";
+    DomainNotificationType["POST_DELETED_IN"] = "pt_d_in";
+    DomainNotificationType["POST_DELETED_OUT"] = "pt_d_out";
 })(DomainNotificationType || (exports.DomainNotificationType = DomainNotificationType = {}));
 var isDomainNotification = function (data) {
     if (!(0, isObject_1.isObject)(data)) {

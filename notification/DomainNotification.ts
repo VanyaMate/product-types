@@ -70,6 +70,14 @@ export enum DomainNotificationType {
     PRIVATE_DIALOGUE_ARCHIVED_OUT   = 'pdlg_a_out',
     PRIVATE_DIALOGUE_UNARCHIVED_IN  = 'pdlg_au_in',
     PRIVATE_DIALOGUE_UNARCHIVED_OUT = 'pdlg_au_out',
+
+    // Post
+    POST_CREATED_IN                 = 'pt_c_in',
+    POST_CREATED_OUT                = 'pt_c_out',
+    POST_UPDATED_IN                 = 'pt_u_in',
+    POST_UPDATED_OUT                = 'pt_u_out',
+    POST_DELETED_IN                 = 'pt_d_in',
+    POST_DELETED_OUT                = 'pt_d_out',
 }
 
 export type DomainNotification = {
