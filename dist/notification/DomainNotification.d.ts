@@ -58,7 +58,13 @@ export declare enum DomainNotificationType {
     POST_UPDATED_IN = "pt_u_in",
     POST_UPDATED_OUT = "pt_u_out",
     POST_DELETED_IN = "pt_d_in",
-    POST_DELETED_OUT = "pt_d_out"
+    POST_DELETED_OUT = "pt_d_out",
+    FILE_UPLOADED_IN = "fl_u_in",
+    FILE_UPLOADED_OUT = "fl_u_out",
+    FILE_UPDATED_IN = "fl_upd_in",
+    FILE_UPDATED_OUT = "fl_upd_out",
+    FILE_DELETED_IN = "fl_d_in",
+    file_DELETED_OUT = "fl_d_out"
 }
 export type DomainNotification = {
     id: string;

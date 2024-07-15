@@ -72,6 +72,13 @@ var DomainNotificationType;
     DomainNotificationType["POST_UPDATED_OUT"] = "pt_u_out";
     DomainNotificationType["POST_DELETED_IN"] = "pt_d_in";
     DomainNotificationType["POST_DELETED_OUT"] = "pt_d_out";
+    // File
+    DomainNotificationType["FILE_UPLOADED_IN"] = "fl_u_in";
+    DomainNotificationType["FILE_UPLOADED_OUT"] = "fl_u_out";
+    DomainNotificationType["FILE_UPDATED_IN"] = "fl_upd_in";
+    DomainNotificationType["FILE_UPDATED_OUT"] = "fl_upd_out";
+    DomainNotificationType["FILE_DELETED_IN"] = "fl_d_in";
+    DomainNotificationType["file_DELETED_OUT"] = "fl_d_out";
 })(DomainNotificationType || (exports.DomainNotificationType = DomainNotificationType = {}));
 var isDomainNotification = function (data) {
     if (!(0, isObject_1.isObject)(data)) {
