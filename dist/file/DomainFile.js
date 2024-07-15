@@ -15,6 +15,7 @@ var isDomainFile = function (data) {
         typeof data['fileOriginalName'] !== 'string' ||
         typeof data['fileWeight'] !== 'number' ||
         typeof data['uploadDate'] !== 'string' ||
+        typeof data['private'] !== 'boolean' ||
         !(0, DomainUser_1.isDomainUser)(data['owner'])) {
         return false;
     }

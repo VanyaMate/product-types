@@ -9,6 +9,7 @@ export type DomainFile = {
     fileOriginalName: string;
     fileWeight: number;
     uploadDate: string;
+    private: boolean;
     owner: DomainUser;
 };
 export declare const isDomainFile: TypeGuard<DomainFile>;

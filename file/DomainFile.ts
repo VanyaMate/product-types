@@ -13,6 +13,7 @@ export type DomainFile = {
     fileOriginalName: string;
     fileWeight: number;
     uploadDate: string;
+    private: boolean;
     owner: DomainUser;
 }
 
@@ -29,6 +30,7 @@ export const isDomainFile: TypeGuard<DomainFile> = function (data: unknown): dat
         typeof data['fileOriginalName'] !== 'string' ||
         typeof data['fileWeight'] !== 'number' ||
         typeof data['uploadDate'] !== 'string' ||
+        typeof data['private'] !== 'boolean' ||
         !isDomainUser(data['owner'])
     ) {
         return false;
