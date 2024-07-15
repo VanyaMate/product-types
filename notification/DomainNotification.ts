@@ -85,7 +85,7 @@ export enum DomainNotificationType {
     FILE_UPDATED_IN                 = 'fl_upd_in',
     FILE_UPDATED_OUT                = 'fl_upd_out',
     FILE_DELETED_IN                 = 'fl_d_in',
-    file_DELETED_OUT                = 'fl_d_out'
+    FILE_DELETED_OUT                = 'fl_d_out'
 }
 
 export type DomainNotification = {
