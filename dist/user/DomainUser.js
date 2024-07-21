@@ -9,7 +9,8 @@ var isDomainUser = function (data) {
     }
     if (typeof data['id'] !== 'string' ||
         typeof data['avatar'] !== 'string' ||
-        typeof data['login'] !== 'string') {
+        typeof data['login'] !== 'string' ||
+        typeof data['online'] !== 'boolean') {
         return false;
     }
     return true;

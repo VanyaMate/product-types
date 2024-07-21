@@ -8,6 +8,7 @@ export type DomainUser = {
     id: string;
     avatar: string;
     login: string;
+    online: boolean;
 }
 
 export const isDomainUser: TypeGuard<DomainUser> = function (data: unknown): data is DomainUser {
@@ -18,7 +19,8 @@ export const isDomainUser: TypeGuard<DomainUser> = function (data: unknown): dat
     if (
         typeof data['id'] !== 'string' ||
         typeof data['avatar'] !== 'string' ||
-        typeof data['login'] !== 'string'
+        typeof data['login'] !== 'string' ||
+        typeof data['online'] !== 'boolean'
     ) {
         return false;
     }
