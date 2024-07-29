@@ -9,6 +9,7 @@ export type DomainLanguageWordUpdateData = {
     original?: string;
     translations?: Array<string>;
     notice?: string;
+    checked?: boolean;
 }
 
 export const isDomainLanguageWordUpdateData: TypeGuard<DomainLanguageWordUpdateData> = function (data: unknown): data is DomainLanguageWordUpdateData {
@@ -19,7 +20,8 @@ export const isDomainLanguageWordUpdateData: TypeGuard<DomainLanguageWordUpdateD
     if (
         !isOptional(data['original'], 'string') ||
         !isOptional(data['notice'], 'string') ||
-        !isOptional(data['translations'], 'string', true)
+        !isOptional(data['translations'], 'string', true) ||
+        !isOptional(data['checked'], 'boolean')
     ) {
         return false;
     }

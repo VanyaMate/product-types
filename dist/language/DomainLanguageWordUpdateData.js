@@ -10,7 +10,8 @@ var isDomainLanguageWordUpdateData = function (data) {
     }
     if (!(0, isOptional_1.isOptional)(data['original'], 'string') ||
         !(0, isOptional_1.isOptional)(data['notice'], 'string') ||
-        !(0, isOptional_1.isOptional)(data['translations'], 'string', true)) {
+        !(0, isOptional_1.isOptional)(data['translations'], 'string', true) ||
+        !(0, isOptional_1.isOptional)(data['checked'], 'boolean')) {
         return false;
     }
     return true;
