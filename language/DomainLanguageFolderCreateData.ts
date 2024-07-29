@@ -6,6 +6,7 @@ import { throwAssertError } from '../_helpers/lib/throwAssertError';
 
 export type DomainLanguageFolderCreateData = {
     title: string;
+    languageId: string;
 }
 
 export const isDomainLanguageFolderCreateData: TypeGuard<DomainLanguageFolderCreateData> = function (data: unknown): data is DomainLanguageFolderCreateData {
@@ -14,7 +15,8 @@ export const isDomainLanguageFolderCreateData: TypeGuard<DomainLanguageFolderCre
     }
 
     if (
-        typeof data['title'] !== 'string'
+        typeof data['title'] !== 'string' ||
+        typeof data['languageId'] !== 'string'
     ) {
         return false;
     }

@@ -9,6 +9,7 @@ var isDomainLanguageWord = function (data) {
     }
     if (typeof data['id'] !== 'string' ||
         typeof data['original'] !== 'string' ||
+        typeof data['notice'] !== 'string' ||
         !Array.isArray(data['translations']) ||
         !data['translations'].every(function (translation) { return typeof translation === 'string'; })) {
         return false;

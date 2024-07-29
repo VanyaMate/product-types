@@ -4,24 +4,23 @@ import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
 
 
-export type DomainLanguageWord = {
-    id: string;
+export type DomainLanguageWordUpdateData = {
     original: string;
     translations: Array<string>;
     notice: string;
 }
 
-export const isDomainLanguageWord: TypeGuard<DomainLanguageWord> = function (data: unknown): data is DomainLanguageWord {
+export const isDomainLanguageWordUpdateData: TypeGuard<DomainLanguageWordUpdateData> = function (data: unknown): data is DomainLanguageWordUpdateData {
     if (!isObject(data)) {
         return false;
     }
 
     if (
-        typeof data['id'] !== 'string' ||
         typeof data['original'] !== 'string' ||
         typeof data['notice'] !== 'string' ||
         !Array.isArray(data['translations']) ||
-        !data['translations'].every((translation) => typeof translation === 'string')
+        !data['translations'].length ||
+        !data['translations'].every((word) => typeof word === 'string')
     ) {
         return false;
     }
@@ -29,8 +28,8 @@ export const isDomainLanguageWord: TypeGuard<DomainLanguageWord> = function (dat
     return true;
 };
 
-export const assertDomainLanguageWord: TypeAssert<DomainLanguageWord> = function (data: unknown, variableName: string, typeName: string) {
-    if (!isDomainLanguageWord(data)) {
+export const assertDomainLanguageWordUpdateData: TypeAssert<DomainLanguageWordUpdateData> = function (data: unknown, variableName: string, typeName: string) {
+    if (!isDomainLanguageWordUpdateData(data)) {
         throwAssertError(variableName, typeName);
     }
 };

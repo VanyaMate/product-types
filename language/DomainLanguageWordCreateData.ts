@@ -7,6 +7,8 @@ import { throwAssertError } from '../_helpers/lib/throwAssertError';
 export type DomainLanguageWordCreateData = {
     original: string;
     translations: Array<string>;
+    notice: string;
+    folderId: string;
 }
 
 export const isDomainLanguageWordCreateData: TypeGuard<DomainLanguageWordCreateData> = function (data: unknown): data is DomainLanguageWordCreateData {
@@ -16,6 +18,8 @@ export const isDomainLanguageWordCreateData: TypeGuard<DomainLanguageWordCreateD
 
     if (
         typeof data['original'] !== 'string' ||
+        typeof data['notice'] !== 'string' ||
+        typeof data['folderId'] !== 'string' ||
         !Array.isArray(data['translations']) ||
         !data['translations'].length ||
         !data['translations'].every((word) => typeof word === 'string')

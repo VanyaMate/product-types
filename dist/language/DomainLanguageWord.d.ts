@@ -4,6 +4,7 @@ export type DomainLanguageWord = {
     id: string;
     original: string;
     translations: Array<string>;
+    notice: string;
 };
 export declare const isDomainLanguageWord: TypeGuard<DomainLanguageWord>;
 export declare const assertDomainLanguageWord: TypeAssert<DomainLanguageWord>;
