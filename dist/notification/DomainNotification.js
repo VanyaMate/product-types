@@ -79,6 +79,27 @@ var DomainNotificationType;
     DomainNotificationType["FILE_UPDATED_OUT"] = "fl_upd_out";
     DomainNotificationType["FILE_DELETED_IN"] = "fl_d_in";
     DomainNotificationType["FILE_DELETED_OUT"] = "fl_d_out";
+    // Language
+    DomainNotificationType["LANGUAGE_CREATED_IN"] = "lg_c_in";
+    DomainNotificationType["LANGUAGE_CREATED_OUT"] = "lg_c_out";
+    DomainNotificationType["LANGUAGE_UPDATED_IN"] = "lg_u_in";
+    DomainNotificationType["LANGUAGE_UPDATED_OUT"] = "lg_u_out";
+    DomainNotificationType["LANGUAGE_DELETED_IN"] = "lg_d_in";
+    DomainNotificationType["LANGUAGE_DELETED_OUT"] = "lg_d_out";
+    // Language folder
+    DomainNotificationType["LANGUAGE_FOLDER_CREATED_IN"] = "lgf_c_in";
+    DomainNotificationType["LANGUAGE_FOLDER_CREATED_OUT"] = "lgf_c_out";
+    DomainNotificationType["LANGUAGE_FOLDER_UPDATED_IN"] = "lgf_u_in";
+    DomainNotificationType["LANGUAGE_FOLDER_UPDATED_OUT"] = "lgf_u_out";
+    DomainNotificationType["LANGUAGE_FOLDER_DELETED_IN"] = "lgf_d_in";
+    DomainNotificationType["LANGUAGE_FOLDER_DELETED_OUT"] = "lgf_d_out";
+    // Language word
+    DomainNotificationType["LANGUAGE_WORD_CREATED_IN"] = "lgw_c_in";
+    DomainNotificationType["LANGUAGE_WORD_CREATED_OUT"] = "lgw_c_out";
+    DomainNotificationType["LANGUAGE_WORD_UPDATED_IN"] = "lgw_u_in";
+    DomainNotificationType["LANGUAGE_WORD_UPDATED_OUT"] = "lgw_u_out";
+    DomainNotificationType["LANGUAGE_WORD_DELETED_IN"] = "lgw_d_in";
+    DomainNotificationType["LANGUAGE_WORD_DELETED_OUT"] = "lgw_d_out";
 })(DomainNotificationType || (exports.DomainNotificationType = DomainNotificationType = {}));
 var isDomainNotification = function (data) {
     if (!(0, isObject_1.isObject)(data)) {

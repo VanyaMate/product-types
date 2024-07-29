@@ -85,7 +85,31 @@ export enum DomainNotificationType {
     FILE_UPDATED_IN                 = 'fl_upd_in',
     FILE_UPDATED_OUT                = 'fl_upd_out',
     FILE_DELETED_IN                 = 'fl_d_in',
-    FILE_DELETED_OUT                = 'fl_d_out'
+    FILE_DELETED_OUT                = 'fl_d_out',
+
+    // Language
+    LANGUAGE_CREATED_IN             = 'lg_c_in',
+    LANGUAGE_CREATED_OUT            = 'lg_c_out',
+    LANGUAGE_UPDATED_IN             = 'lg_u_in',
+    LANGUAGE_UPDATED_OUT            = 'lg_u_out',
+    LANGUAGE_DELETED_IN             = 'lg_d_in',
+    LANGUAGE_DELETED_OUT            = 'lg_d_out',
+
+    // Language folder
+    LANGUAGE_FOLDER_CREATED_IN      = 'lgf_c_in',
+    LANGUAGE_FOLDER_CREATED_OUT     = 'lgf_c_out',
+    LANGUAGE_FOLDER_UPDATED_IN      = 'lgf_u_in',
+    LANGUAGE_FOLDER_UPDATED_OUT     = 'lgf_u_out',
+    LANGUAGE_FOLDER_DELETED_IN      = 'lgf_d_in',
+    LANGUAGE_FOLDER_DELETED_OUT     = 'lgf_d_out',
+
+    // Language word
+    LANGUAGE_WORD_CREATED_IN        = 'lgw_c_in',
+    LANGUAGE_WORD_CREATED_OUT       = 'lgw_c_out',
+    LANGUAGE_WORD_UPDATED_IN        = 'lgw_u_in',
+    LANGUAGE_WORD_UPDATED_OUT       = 'lgw_u_out',
+    LANGUAGE_WORD_DELETED_IN        = 'lgw_d_in',
+    LANGUAGE_WORD_DELETED_OUT       = 'lgw_d_out',
 }
 
 export type DomainNotification = {
