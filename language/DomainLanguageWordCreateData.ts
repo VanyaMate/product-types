@@ -2,6 +2,7 @@ import { TypeGuard } from '../_helpers/types/guard.types';
 import { isObject } from '../_helpers/lib/isObject';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
+import { isArray } from '../_helpers/lib/isArray';
 
 
 export type DomainLanguageWordCreateData = {
@@ -20,9 +21,8 @@ export const isDomainLanguageWordCreateData: TypeGuard<DomainLanguageWordCreateD
         typeof data['original'] !== 'string' ||
         typeof data['notice'] !== 'string' ||
         typeof data['folderId'] !== 'string' ||
-        !Array.isArray(data['translations']) ||
-        !data['translations'].length ||
-        !data['translations'].every((word) => typeof word === 'string')
+        !isArray(data['translations'], 'string') ||
+        !data['translations'].length
     ) {
         return false;
     }

@@ -6,6 +6,7 @@ import {
     DomainLanguageFolderFull,
     isDomainLanguageFolderFull,
 } from './DomainLanguageFolderFull';
+import { isArray } from '../_helpers/lib/isArray';
 
 
 export type DomainLanguageFull = DomainLanguage & {
@@ -18,8 +19,7 @@ export const isDomainLanguageFull: TypeGuard<DomainLanguageFull> = function (dat
     }
 
     if (
-        !Array.isArray(data['folders']) ||
-        !data['folders'].every(isDomainLanguageFolderFull)
+        !isArray(data['folders'], isDomainLanguageFolderFull)
     ) {
         return false;
     }

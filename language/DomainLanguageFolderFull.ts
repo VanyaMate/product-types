@@ -6,6 +6,7 @@ import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
 import { DomainLanguageWord, isDomainLanguageWord } from './DomainLanguageWord';
+import { isArray } from '../_helpers/lib/isArray';
 
 
 export type DomainLanguageFolderFull = DomainLanguageFolder & {
@@ -18,8 +19,7 @@ export const isDomainLanguageFolderFull: TypeGuard<DomainLanguageFolderFull> = f
     }
 
     if (
-        !Array.isArray(data['words']) ||
-        !data['words'].every(isDomainLanguageWord)
+        !isArray(data['words'], isDomainLanguageWord)
     ) {
         return false;
     }

@@ -2,6 +2,7 @@ import { TypeGuard } from '../_helpers/types/guard.types';
 import { isObject } from '../_helpers/lib/isObject';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
+import { isArray } from '../_helpers/lib/isArray';
 
 
 export type DomainLanguageWord = {
@@ -9,6 +10,7 @@ export type DomainLanguageWord = {
     original: string;
     translations: Array<string>;
     notice: string;
+    checked: boolean;
 }
 
 export const isDomainLanguageWord: TypeGuard<DomainLanguageWord> = function (data: unknown): data is DomainLanguageWord {
@@ -20,8 +22,8 @@ export const isDomainLanguageWord: TypeGuard<DomainLanguageWord> = function (dat
         typeof data['id'] !== 'string' ||
         typeof data['original'] !== 'string' ||
         typeof data['notice'] !== 'string' ||
-        !Array.isArray(data['translations']) ||
-        !data['translations'].every((translation) => typeof translation === 'string')
+        typeof data['checked'] !== 'boolean' ||
+        !isArray(data['translations'], 'string')
     ) {
         return false;
     }

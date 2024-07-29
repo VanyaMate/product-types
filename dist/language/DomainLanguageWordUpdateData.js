@@ -3,15 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.assertDomainLanguageWordUpdateData = exports.isDomainLanguageWordUpdateData = void 0;
 var isObject_1 = require("../_helpers/lib/isObject");
 var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
+var isOptional_1 = require("../_helpers/lib/isOptional");
 var isDomainLanguageWordUpdateData = function (data) {
     if (!(0, isObject_1.isObject)(data)) {
         return false;
     }
-    if (typeof data['original'] !== 'string' ||
-        typeof data['notice'] !== 'string' ||
-        !Array.isArray(data['translations']) ||
-        !data['translations'].length ||
-        !data['translations'].every(function (word) { return typeof word === 'string'; })) {
+    if (!(0, isOptional_1.isOptional)(data['original'], 'string') ||
+        !(0, isOptional_1.isOptional)(data['notice'], 'string') ||
+        !(0, isOptional_1.isOptional)(data['translations'], 'string', true)) {
         return false;
     }
     return true;

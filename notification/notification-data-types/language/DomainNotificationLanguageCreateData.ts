@@ -6,10 +6,12 @@ import {
     DomainLanguage,
     isDomainLanguage,
 } from '../../../language/DomainLanguage';
+import { DomainUser, isDomainUser } from '../../../user/DomainUser';
 
 
 export type DomainNotificationLanguageCreateData = {
     language: DomainLanguage;
+    owner: DomainUser;
 }
 
 export const isDomainNotificationLanguageCreateData: TypeGuard<DomainNotificationLanguageCreateData> = function (data: unknown): data is DomainNotificationLanguageCreateData {
@@ -18,7 +20,8 @@ export const isDomainNotificationLanguageCreateData: TypeGuard<DomainNotificatio
     }
 
     if (
-        !isDomainLanguage(data['language'])
+        !isDomainLanguage(data['language']) ||
+        !isDomainUser(data['owner'])
     ) {
         return false;
     }

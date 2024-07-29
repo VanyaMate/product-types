@@ -7,8 +7,7 @@ var isDomainLanguageFolderCreateData = function (data) {
     if (!(0, isObject_1.isObject)(data)) {
         return false;
     }
-    if (typeof data['title'] !== 'string' ||
-        typeof data['languageId'] !== 'string') {
+    if (typeof data['title'] !== 'string') {
         return false;
     }
     return true;

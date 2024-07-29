@@ -4,12 +4,12 @@ exports.assertDomainLanguageFolderFull = exports.isDomainLanguageFolderFull = vo
 var DomainLanguageFolder_1 = require("./DomainLanguageFolder");
 var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
 var DomainLanguageWord_1 = require("./DomainLanguageWord");
+var isArray_1 = require("../_helpers/lib/isArray");
 var isDomainLanguageFolderFull = function (data) {
     if (!(0, DomainLanguageFolder_1.isDomainLanguageFolder)(data)) {
         return false;
     }
-    if (!Array.isArray(data['words']) ||
-        !data['words'].every(DomainLanguageWord_1.isDomainLanguageWord)) {
+    if (!(0, isArray_1.isArray)(data['words'], DomainLanguageWord_1.isDomainLanguageWord)) {
         return false;
     }
     return true;

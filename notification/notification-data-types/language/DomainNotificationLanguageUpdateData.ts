@@ -6,10 +6,12 @@ import { TypeGuard } from '../../../_helpers/types/guard.types';
 import { isObject } from '../../../_helpers/lib/isObject';
 import { TypeAssert } from '../../../_helpers/types/assert.types';
 import { throwAssertError } from '../../../_helpers/lib/throwAssertError';
+import { DomainUser, isDomainUser } from '../../../user/DomainUser';
 
 
 export type DomainNotificationLanguageUpdateData = {
     language: DomainLanguage;
+    owner: DomainUser;
 }
 
 export const isDomainNotificationLanguageUpdateData: TypeGuard<DomainNotificationLanguageUpdateData> = function (data: unknown): data is DomainNotificationLanguageUpdateData {
@@ -18,7 +20,8 @@ export const isDomainNotificationLanguageUpdateData: TypeGuard<DomainNotificatio
     }
 
     if (
-        !isDomainLanguage(data['language'])
+        !isDomainLanguage(data['language']) ||
+        !isDomainUser(data['owner'])
     ) {
         return false;
     }

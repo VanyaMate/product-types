@@ -14,12 +14,14 @@ import {
     DomainLanguage,
     isDomainLanguage,
 } from '../../../language/DomainLanguage';
+import { DomainUser, isDomainUser } from '../../../user/DomainUser';
 
 
 export type DomainNotificationLanguageWordCreateData = {
     word: DomainLanguageWord;
     folder: DomainLanguageFolder;
     language: DomainLanguage;
+    owner: DomainUser;
 }
 
 export const isDomainNotificationLanguageWordCreateData: TypeGuard<DomainNotificationLanguageWordCreateData> = function (data: unknown): data is DomainNotificationLanguageWordCreateData {
@@ -30,7 +32,8 @@ export const isDomainNotificationLanguageWordCreateData: TypeGuard<DomainNotific
     if (
         !isDomainLanguageWord(data['word']) ||
         !isDomainLanguageFolder(data['folder']) ||
-        !isDomainLanguage(data['language'])
+        !isDomainLanguage(data['language']) ||
+        !isDomainUser(data['owner'])
     ) {
         return false;
     }
