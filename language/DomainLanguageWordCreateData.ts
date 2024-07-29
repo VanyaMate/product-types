@@ -9,7 +9,6 @@ export type DomainLanguageWordCreateData = {
     original: string;
     translations: Array<string>;
     notice: string;
-    folderId: string;
 }
 
 export const isDomainLanguageWordCreateData: TypeGuard<DomainLanguageWordCreateData> = function (data: unknown): data is DomainLanguageWordCreateData {
@@ -20,7 +19,6 @@ export const isDomainLanguageWordCreateData: TypeGuard<DomainLanguageWordCreateD
     if (
         typeof data['original'] !== 'string' ||
         typeof data['notice'] !== 'string' ||
-        typeof data['folderId'] !== 'string' ||
         !isArray(data['translations'], 'string') ||
         !data['translations'].length
     ) {

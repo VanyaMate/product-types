@@ -4,7 +4,6 @@ export type DomainLanguageWordCreateData = {
     original: string;
     translations: Array<string>;
     notice: string;
-    folderId: string;
 };
 export declare const isDomainLanguageWordCreateData: TypeGuard<DomainLanguageWordCreateData>;
 export declare const assertDomainLanguageWordCreateData: TypeAssert<DomainLanguageWordCreateData>;

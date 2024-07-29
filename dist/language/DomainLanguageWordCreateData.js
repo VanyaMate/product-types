@@ -10,7 +10,6 @@ var isDomainLanguageWordCreateData = function (data) {
     }
     if (typeof data['original'] !== 'string' ||
         typeof data['notice'] !== 'string' ||
-        typeof data['folderId'] !== 'string' ||
         !(0, isArray_1.isArray)(data['translations'], 'string') ||
         !data['translations'].length) {
         return false;
