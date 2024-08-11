@@ -11,7 +11,8 @@ var isDomainUserFull = function (data) {
     if (!(0, isObject_1.isObject)(data)) {
         return false;
     }
-    if (!(0, DomainUser_1.isDomainUser)(data) ||
+    if (typeof data['background'] !== 'string' ||
+        !(0, DomainUser_1.isDomainUser)(data) ||
         !(0, DomainUserNameInfo_1.isDomainUserNameInfo)(data['nameInfo']) ||
         !(0, DomainUserContactsInfo_1.isDomainUserContactsInfo)(data['contacts']) ||
         !(0, DomainUserPermissions_1.isDomainUserPermissions)(data['permissions'])) {

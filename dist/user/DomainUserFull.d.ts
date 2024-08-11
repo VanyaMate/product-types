@@ -5,6 +5,7 @@ import { DomainUserContactsInfo } from './DomainUserContactsInfo';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { DomainUserPermissions } from './DomainUserPermissions';
 export type DomainUserFull = DomainUser & {
+    background: string;
     nameInfo: DomainUserNameInfo;
     contacts: DomainUserContactsInfo;
     permissions: DomainUserPermissions;
