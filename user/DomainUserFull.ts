@@ -17,7 +17,7 @@ import {
 export type DomainUserFull =
     DomainUser &
     {
-        background: string;
+        background: string | null;
         nameInfo: DomainUserNameInfo;
         contacts: DomainUserContactsInfo;
         permissions: DomainUserPermissions;
@@ -28,8 +28,11 @@ export const isDomainUserFull: TypeGuard<DomainUserFull> = function (data: unkno
         return false;
     }
 
+    if (typeof data['background'] !== 'string' && data['background'] !== null) {
+        return false;
+    }
+
     if (
-        typeof data['background'] !== 'string' ||
         !isDomainUser(data) ||
         !isDomainUserNameInfo(data['nameInfo']) ||
         !isDomainUserContactsInfo(data['contacts']) ||
