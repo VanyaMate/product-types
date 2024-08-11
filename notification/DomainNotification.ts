@@ -15,6 +15,12 @@ export enum DomainNotificationType {
     DISCONNECTED                    = 'dis',
     TOKENS_UPDATE                   = 'tkn',
 
+    // User
+    USER_AVATAR_UPDATE_IN           = 'u_ava_u_in',
+    USER_AVATAR_UPDATE_OUT          = 'u_ava_u_out',
+    USER_LOGIN_UPDATE_IN            = 'u_log_u_in',
+    USER_LOGIN_UPDATE_OUT           = 'u_log_u_out',
+
     // User message
     USER_MESSAGE_IN                 = 'u_msg_in',
     USER_MESSAGE_OUT                = 'u_msg_out',

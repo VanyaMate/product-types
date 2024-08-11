@@ -14,6 +14,11 @@ var DomainNotificationType;
     DomainNotificationType["CONNECTING"] = "cong";
     DomainNotificationType["DISCONNECTED"] = "dis";
     DomainNotificationType["TOKENS_UPDATE"] = "tkn";
+    // User
+    DomainNotificationType["USER_AVATAR_UPDATE_IN"] = "u_ava_u_in";
+    DomainNotificationType["USER_AVATAR_UPDATE_OUT"] = "u_ava_u_out";
+    DomainNotificationType["USER_LOGIN_UPDATE_IN"] = "u_log_u_in";
+    DomainNotificationType["USER_LOGIN_UPDATE_OUT"] = "u_log_u_out";
     // User message
     DomainNotificationType["USER_MESSAGE_IN"] = "u_msg_in";
     DomainNotificationType["USER_MESSAGE_OUT"] = "u_msg_out";
