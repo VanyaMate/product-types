@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.assertDomainAuthResponse = exports.isDomainAuthResponse = void 0;
-var DomainUser_1 = require("../user/DomainUser");
 var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
 var isObject_1 = require("../_helpers/lib/isObject");
+var DomainUserFull_1 = require("../user/DomainUserFull");
 var isDomainAuthResponse = function (data) {
     if (!(0, isObject_1.isObject)(data)) {
         return false;
@@ -11,7 +11,7 @@ var isDomainAuthResponse = function (data) {
     if (!Array.isArray(data['tokens']) ||
         typeof data['tokens'][0] !== 'string' ||
         typeof data['tokens'][1] !== 'string' ||
-        !(0, DomainUser_1.isDomainUser)(data['user'])) {
+        !(0, DomainUserFull_1.isDomainUserFull)(data['user'])) {
         return false;
     }
     return true;
