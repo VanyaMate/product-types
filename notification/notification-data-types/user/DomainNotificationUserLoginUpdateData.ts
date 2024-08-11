@@ -6,7 +6,8 @@ import { DomainUser, isDomainUser } from '../../../user/DomainUser';
 
 
 export type DomainNotificationUserLoginUpdateData = {
-    user: DomainUser;
+    newUser: DomainUser;
+    oldUser: DomainUser;
 }
 
 export const isDomainNotificationUserLoginUpdateData: TypeGuard<DomainNotificationUserLoginUpdateData> = function (data: unknown): data is DomainNotificationUserLoginUpdateData {
@@ -15,7 +16,8 @@ export const isDomainNotificationUserLoginUpdateData: TypeGuard<DomainNotificati
     }
 
     if (
-        !isDomainUser(data['user'])
+        !isDomainUser(data['newUser']) ||
+        !isDomainUser(data['oldUser'])
     ) {
         return false;
     }

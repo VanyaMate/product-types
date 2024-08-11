@@ -4,8 +4,8 @@ import { throwAssertError } from '../_helpers/lib/throwAssertError';
 import { isObject } from '../_helpers/lib/isObject';
 
 
-// IN - получатель
-// OUT - не получатель
+// IN - действие того кто получил уведомление
+// OUT - действие кого-то другого
 export enum DomainNotificationType {
     // Common
     ERROR                           = 'err',
@@ -14,12 +14,21 @@ export enum DomainNotificationType {
     CONNECTING                      = 'cong',
     DISCONNECTED                    = 'dis',
     TOKENS_UPDATE                   = 'tkn',
+    PASSWORD_UPDATE                 = 'pas',
+    NOTIFICATIONS_UPDATE            = 'not',    // TODO: Сделать тип
+    NOTIFICATIONS_STATE_UPDATE      = 'not_s',
 
     // User
     USER_AVATAR_UPDATE_IN           = 'u_ava_u_in',
     USER_AVATAR_UPDATE_OUT          = 'u_ava_u_out',
     USER_LOGIN_UPDATE_IN            = 'u_log_u_in',
     USER_LOGIN_UPDATE_OUT           = 'u_log_u_out',
+    USER_CONTACTS_UPDATE_IN         = 'u_con_u_in',
+    USER_CONTACTS_UPDATE_OUT        = 'u_con_u_out',
+    USER_BACKGROUND_UPDATE_IN       = 'u_bac_u_in',
+    USER_BACKGROUND_UPDATE_OUT      = 'u_bac_u_out',
+    USER_PERMISSIONS_UPDATE_IN      = 'u_per_u_in',
+    USER_PERMISSIONS_UPDATE_OUT     = 'u_per_u_out',
 
     // User message
     USER_MESSAGE_IN                 = 'u_msg_in',
