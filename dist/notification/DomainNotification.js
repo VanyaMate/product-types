@@ -114,6 +114,15 @@ var DomainNotificationType;
     DomainNotificationType["LANGUAGE_WORD_UPDATED_OUT"] = "lgw_u_out";
     DomainNotificationType["LANGUAGE_WORD_DELETED_IN"] = "lgw_d_in";
     DomainNotificationType["LANGUAGE_WORD_DELETED_OUT"] = "lgw_d_out";
+    // Call
+    DomainNotificationType["CALL_OFFER_IN"] = "ca_o_in";
+    DomainNotificationType["CALL_OFFER_OUT"] = "ca_o_out";
+    DomainNotificationType["CALL_ANSWER_IN"] = "ca_a_in";
+    DomainNotificationType["CALL_ANSWER_OUT"] = "ca_a_out";
+    DomainNotificationType["CALL_START_IN"] = "ca_s_in";
+    DomainNotificationType["CALL_START_OUT"] = "ca_s_in";
+    DomainNotificationType["CALL_FINISH_IN"] = "ca_f_in";
+    DomainNotificationType["CALL_FINISH_OUT"] = "ca_f_out";
 })(DomainNotificationType || (exports.DomainNotificationType = DomainNotificationType = {}));
 var isDomainNotification = function (data) {
     if (!(0, isObject_1.isObject)(data)) {

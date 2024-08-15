@@ -95,7 +95,15 @@ export declare enum DomainNotificationType {
     LANGUAGE_WORD_UPDATED_IN = "lgw_u_in",
     LANGUAGE_WORD_UPDATED_OUT = "lgw_u_out",
     LANGUAGE_WORD_DELETED_IN = "lgw_d_in",
-    LANGUAGE_WORD_DELETED_OUT = "lgw_d_out"
+    LANGUAGE_WORD_DELETED_OUT = "lgw_d_out",
+    CALL_OFFER_IN = "ca_o_in",
+    CALL_OFFER_OUT = "ca_o_out",
+    CALL_ANSWER_IN = "ca_a_in",
+    CALL_ANSWER_OUT = "ca_a_out",
+    CALL_START_IN = "ca_s_in",
+    CALL_START_OUT = "ca_s_in",
+    CALL_FINISH_IN = "ca_f_in",
+    CALL_FINISH_OUT = "ca_f_out"
 }
 export type DomainNotification = {
     id: string;
