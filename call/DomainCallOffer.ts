@@ -2,10 +2,13 @@ import { isObject } from '../_helpers/lib/isObject';
 import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
-import { isOptional } from '../_helpers/lib/isOptional';
+import { isArray } from '../_helpers/lib/isArray';
 
 
-export type DomainCallOffer = RTCSessionDescriptionInit;
+export type DomainCallOffer = {
+    offer: RTCSessionDescriptionInit;
+    candidates: unknown[];
+};
 
 export const isDomainCallOffer: TypeGuard<DomainCallOffer> = function (data: unknown): data is DomainCallOffer {
     if (!isObject(data)) {
@@ -13,8 +16,8 @@ export const isDomainCallOffer: TypeGuard<DomainCallOffer> = function (data: unk
     }
 
     if (
-        !isOptional(data['sdp'], 'string') ||
-        !isOptional(data['type'], 'string')
+        !isObject(data['offer']) ||
+        !isArray(data['candidates'], (item: unknown): item is unknown => true)
     ) {
         return false;
     }

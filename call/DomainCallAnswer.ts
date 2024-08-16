@@ -3,9 +3,13 @@ import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
 import { isOptional } from '../_helpers/lib/isOptional';
+import { isArray } from '../_helpers/lib/isArray';
 
 
-export type DomainCallAnswer = RTCLocalSessionDescriptionInit;
+export type DomainCallAnswer = {
+    answer: RTCLocalSessionDescriptionInit;
+    candidates: unknown[];
+};
 
 export const isDomainCallAnswer: TypeGuard<DomainCallAnswer> = function (data: unknown): data is DomainCallAnswer {
     if (!isObject(data)) {
@@ -13,8 +17,8 @@ export const isDomainCallAnswer: TypeGuard<DomainCallAnswer> = function (data: u
     }
 
     if (
-        !isOptional(data['sdp'], 'string') ||
-        !isOptional(data['type'], 'string')
+        !isObject(data['answer']) ||
+        !isArray(data['candidates'], (item: unknown): item is unknown => true)
     ) {
         return false;
     }

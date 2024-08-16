@@ -3,13 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.assertDomainCallOffer = exports.isDomainCallOffer = void 0;
 var isObject_1 = require("../_helpers/lib/isObject");
 var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
-var isOptional_1 = require("../_helpers/lib/isOptional");
+var isArray_1 = require("../_helpers/lib/isArray");
 var isDomainCallOffer = function (data) {
     if (!(0, isObject_1.isObject)(data)) {
         return false;
     }
-    if (!(0, isOptional_1.isOptional)(data['sdp'], 'string') ||
-        !(0, isOptional_1.isOptional)(data['type'], 'string')) {
+    if (!(0, isObject_1.isObject)(data['offer']) ||
+        !(0, isArray_1.isArray)(data['candidates'], function (item) { return true; })) {
         return false;
     }
     return true;
