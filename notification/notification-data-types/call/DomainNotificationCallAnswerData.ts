@@ -11,10 +11,12 @@ import {
     DomainCallAnswer,
     isDomainCallAnswer,
 } from '../../../call/DomainCallAnswer';
+import { DomainCall, isDomainCall } from '../../../call/DomainCall';
 
 
 export type DomainNotificationCallAnswerData = {
     user: DomainUser;
+    call: DomainCall;
     answer: DomainCallAnswer;
 }
 
@@ -25,6 +27,7 @@ export const isDomainNotificationCallAnswerData: TypeGuard<DomainNotificationCal
 
     if (
         !isDomainUser(data['user']) ||
+        !isDomainCall(data['call']) ||
         !isDomainCallAnswer(data['answer'])
     ) {
         return false;
