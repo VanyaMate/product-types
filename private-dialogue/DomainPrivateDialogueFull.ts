@@ -3,15 +3,16 @@ import { isObject } from '../_helpers/lib/isObject';
 import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
-import { DomainMessage } from '../message/DomainMessage';
+import { DomainMessage, isDomainMessage } from '../message/DomainMessage';
 import {
     DomainPrivateDialogue,
     isDomainPrivateDialogue,
 } from './DomainPrivateDialogue';
+import { isArray } from '../_helpers/lib/isArray';
 
 
 export type DomainPrivateDialogueFull = DomainPrivateDialogue & {
-    createdDate: string;
+    createdDate: number;
 
     meArchived: boolean;
     meDeleted: boolean;
@@ -29,13 +30,13 @@ export const isDomainPrivateDialogueFull: TypeGuard<DomainPrivateDialogueFull> =
 
     if (
         !isDomainPrivateDialogue(data) ||
-        typeof data['createdDate'] !== 'string' ||
+        typeof data['createdDate'] !== 'number' ||
         typeof data['meArchived'] !== 'boolean' ||
         typeof data['meDeleted'] !== 'boolean' ||
         typeof data['companionArchived'] !== 'boolean' ||
         typeof data['companionDeleted'] !== 'boolean' ||
         !isDomainUser(data['user']) ||
-        !Array.isArray(data['messages'])
+        !isArray(data['messages'], isDomainMessage)
     ) {
         return false;
     }

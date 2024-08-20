@@ -9,7 +9,7 @@ export type DomainPost = {
     id: string;
     message: string;
     redacted: boolean;
-    creationData: string;
+    creationData: number;
     author: DomainUser;
 }
 
@@ -22,7 +22,7 @@ export const isDomainPost: TypeGuard<DomainPost> = function (data: unknown): dat
         typeof data['id'] !== 'string' ||
         typeof data['message'] !== 'string' ||
         typeof data['redacted'] !== 'boolean' ||
-        typeof data['creationData'] !== 'string' ||
+        typeof data['creationData'] !== 'number' ||
         !isDomainUser(data['author'])
     ) {
         return false;

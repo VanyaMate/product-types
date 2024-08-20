@@ -17,7 +17,7 @@ export type DomainMessage = {
     message: string;
     redacted: boolean;
     read: boolean;
-    creationDate: string;
+    creationDate: number;
     type: DomainMessageType;
     author: DomainUser;
 }
@@ -33,7 +33,7 @@ export const isDomainMessage: TypeGuard<DomainMessage> = function (data: unknown
         typeof data['message'] !== 'string' ||
         typeof data['redacted'] !== 'boolean' ||
         typeof data['read'] !== 'boolean' ||
-        typeof data['creationDate'] !== 'string' ||
+        typeof data['creationDate'] !== 'number' ||
         typeof data['type'] !== 'string' ||
         !isDomainUser(data['author'])
     ) {
