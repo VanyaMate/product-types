@@ -1,4 +1,3 @@
-import { DomainUser, isDomainUser } from '../../../user/DomainUser';
 import { TypeGuard } from '../../../_helpers/types/guard.types';
 import { isObject } from '../../../_helpers/lib/isObject';
 import { TypeAssert } from '../../../_helpers/types/assert.types';
@@ -7,7 +6,6 @@ import { DomainCall, isDomainCall } from '../../../call/DomainCall';
 
 
 export type DomainNotificationCallStartData = {
-    user: DomainUser;
     call: DomainCall;
 }
 
@@ -17,7 +15,6 @@ export const isDomainNotificationCallStartData: TypeGuard<DomainNotificationCall
     }
 
     if (
-        !isDomainUser(data['user']) ||
         !isDomainCall(data['call'])
     ) {
         return false;

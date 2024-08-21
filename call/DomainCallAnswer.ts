@@ -2,7 +2,6 @@ import { isObject } from '../_helpers/lib/isObject';
 import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
-import { isOptional } from '../_helpers/lib/isOptional';
 import { isArray } from '../_helpers/lib/isArray';
 
 

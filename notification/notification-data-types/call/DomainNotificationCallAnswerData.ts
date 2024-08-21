@@ -1,8 +1,3 @@
-import { DomainUser, isDomainUser } from '../../../user/DomainUser';
-import {
-    DomainCallOffer,
-    isDomainCallOffer,
-} from '../../../call/DomainCallOffer';
 import { TypeGuard } from '../../../_helpers/types/guard.types';
 import { isObject } from '../../../_helpers/lib/isObject';
 import { TypeAssert } from '../../../_helpers/types/assert.types';
@@ -15,7 +10,6 @@ import { DomainCall, isDomainCall } from '../../../call/DomainCall';
 
 
 export type DomainNotificationCallAnswerData = {
-    user: DomainUser;
     call: DomainCall;
     answer: DomainCallAnswer;
 }
@@ -26,7 +20,6 @@ export const isDomainNotificationCallAnswerData: TypeGuard<DomainNotificationCal
     }
 
     if (
-        !isDomainUser(data['user']) ||
         !isDomainCall(data['call']) ||
         !isDomainCallAnswer(data['answer'])
     ) {

@@ -1,4 +1,3 @@
-import { DomainUser, isDomainUser } from '../../../user/DomainUser';
 import {
     DomainCallOffer,
     isDomainCallOffer,
@@ -11,7 +10,6 @@ import { DomainCall, isDomainCall } from '../../../call/DomainCall';
 
 
 export type DomainNotificationCallOfferData = {
-    user: DomainUser;
     call: DomainCall;
     offer: DomainCallOffer;
 }
@@ -22,7 +20,6 @@ export const isDomainNotificationCallOfferData: TypeGuard<DomainNotificationCall
     }
 
     if (
-        !isDomainUser(data['user']) ||
         !isDomainCallOffer(data['offer']) ||
         !isDomainCall(data['call'])
     ) {
