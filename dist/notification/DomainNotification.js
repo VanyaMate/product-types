@@ -120,7 +120,7 @@ var DomainNotificationType;
     DomainNotificationType["CALL_ANSWER_IN"] = "ca_a_in";
     DomainNotificationType["CALL_ANSWER_OUT"] = "ca_a_out";
     DomainNotificationType["CALL_START_IN"] = "ca_s_in";
-    DomainNotificationType["CALL_START_OUT"] = "ca_s_in";
+    DomainNotificationType["CALL_START_OUT"] = "ca_s_out";
     DomainNotificationType["CALL_FINISH_IN"] = "ca_f_in";
     DomainNotificationType["CALL_FINISH_OUT"] = "ca_f_out";
 })(DomainNotificationType || (exports.DomainNotificationType = DomainNotificationType = {}));

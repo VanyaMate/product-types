@@ -132,7 +132,7 @@ export enum DomainNotificationType {
     CALL_ANSWER_IN                  = 'ca_a_in',
     CALL_ANSWER_OUT                 = 'ca_a_out',
     CALL_START_IN                   = 'ca_s_in',
-    CALL_START_OUT                  = 'ca_s_in',
+    CALL_START_OUT                  = 'ca_s_out',
     CALL_FINISH_IN                  = 'ca_f_in',
     CALL_FINISH_OUT                 = 'ca_f_out',
 }
