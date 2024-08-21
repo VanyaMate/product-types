@@ -10,6 +10,7 @@ var isDomainCall = function (data) {
     }
     if (typeof data['id'] !== 'string' ||
         typeof data['finished'] !== 'boolean' ||
+        typeof data['initiatorLogin'] !== 'string' ||
         typeof data['creationDate'] !== 'number' ||
         typeof data['finishedDate'] !== 'number' ||
         typeof data['connectionId'] !== 'string' ||
