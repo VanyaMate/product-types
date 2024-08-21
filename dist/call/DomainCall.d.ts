@@ -5,7 +5,7 @@ export type DomainCall = {
     id: string;
     user: DomainUser;
     finished: boolean;
-    initiatorLogin: string;
+    initiatorId: string;
     creationDate: number;
     finishedDate: number;
     connectionId: string;

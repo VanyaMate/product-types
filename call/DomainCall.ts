@@ -9,7 +9,7 @@ export type DomainCall = {
     id: string;
     user: DomainUser;
     finished: boolean;
-    initiatorLogin: string;
+    initiatorId: string;
     creationDate: number;
     finishedDate: number;
     connectionId: string;
@@ -23,7 +23,7 @@ export const isDomainCall: TypeGuard<DomainCall> = function (data: unknown): dat
     if (
         typeof data['id'] !== 'string' ||
         typeof data['finished'] !== 'boolean' ||
-        typeof data['initiatorLogin'] !== 'string' ||
+        typeof data['initiatorId'] !== 'string' ||
         typeof data['creationDate'] !== 'number' ||
         typeof data['finishedDate'] !== 'number' ||
         typeof data['connectionId'] !== 'string' ||
