@@ -2,7 +2,7 @@ import {
     TypeGuard,
     TypeAssert,
     isObject,
-    isString,
+    isString, isNumber,
 } from '@vanyamate/types-kit';
 import {
     DomainExcelFileSplitData,
@@ -11,6 +11,8 @@ import {
 
 
 export type DomainExcelFileSplitResponse = {
+    fileName: string;
+    fileSize: number;
     options: DomainExcelFileSplitData;
     path: string;
 }
@@ -19,7 +21,9 @@ export const isDomainExcelFileSplitResponse: TypeGuard<DomainExcelFileSplitRespo
     return !(
         !isObject(data) ||
         !isDomainExcelFileSplitData(data['options']) ||
-        !isString(data['path'])
+        !isString(data['path']) ||
+        !isString(data['fileName']) ||
+        !isNumber(data['fileSize'])
     );
 };
 
