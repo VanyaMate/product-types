@@ -3,6 +3,7 @@ import { DomainExcelFileSheetData } from './DomainExcelFileSheetData';
 import { DomainExcelFileSplitResponse } from './DomainExcelFileSplitResponse';
 export type DomainExcelFileSheets = Record<string, DomainExcelFileSheetData>;
 export type DomainExcelFileData = {
+    fileName: string;
     sheets: DomainExcelFileSheets;
     responses: Array<DomainExcelFileSplitResponse>;
 };

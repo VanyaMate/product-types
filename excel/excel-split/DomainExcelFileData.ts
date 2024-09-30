@@ -2,7 +2,7 @@ import {
     TypeGuard,
     TypeAssert,
     isObject,
-    isArray,
+    isArray, isString,
 } from '@vanyamate/types-kit';
 import { DomainExcelFileSheetData } from './DomainExcelFileSheetData';
 import {
@@ -14,6 +14,7 @@ import {
 export type DomainExcelFileSheets = Record<string, DomainExcelFileSheetData>;
 
 export type DomainExcelFileData = {
+    fileName: string;
     sheets: DomainExcelFileSheets;
     responses: Array<DomainExcelFileSplitResponse>;
 }
@@ -22,7 +23,8 @@ export const isDomainExcelFileData: TypeGuard<DomainExcelFileData> = function (d
     return !(
         !isObject(data) ||
         !isObject(data['sheets']) ||
-        !isArray(data['responses'], isDomainExcelFileSplitResponse)
+        !isArray(data['responses'], isDomainExcelFileSplitResponse) ||
+        !isString(data['fileName'])
     );
 };
 

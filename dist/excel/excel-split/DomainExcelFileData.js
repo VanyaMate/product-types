@@ -6,7 +6,8 @@ var DomainExcelFileSplitResponse_1 = require("./DomainExcelFileSplitResponse");
 var isDomainExcelFileData = function (data) {
     return !(!(0, types_kit_1.isObject)(data) ||
         !(0, types_kit_1.isObject)(data['sheets']) ||
-        !(0, types_kit_1.isArray)(data['responses'], DomainExcelFileSplitResponse_1.isDomainExcelFileSplitResponse));
+        !(0, types_kit_1.isArray)(data['responses'], DomainExcelFileSplitResponse_1.isDomainExcelFileSplitResponse) ||
+        !(0, types_kit_1.isString)(data['fileName']));
 };
 exports.isDomainExcelFileData = isDomainExcelFileData;
 var assertDomainExcelFileData = function (data, errorMessage) {
