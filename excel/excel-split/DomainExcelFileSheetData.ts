@@ -2,27 +2,27 @@ import {
     TypeGuard,
     TypeAssert,
     isObject,
-    isString, isArray, isNumber,
+    isString,
+    isArray,
+    isNumber,
 } from '@vanyamate/types-kit';
 
 
-export type DomainExcelFileColumn = [ string, string ];
+export type DomainExcelFileColumns = Array<string>;
 
 export type DomainExcelFileSheetData = {
-    firstRow: Array<DomainExcelFileColumn>,
+    firstRow: DomainExcelFileColumns,
     rowsAmount: number;
 }
 
-const LENGTH_OF_COLUMN_DATA = 2;
-
-const isDomainExcelFileColumn: TypeGuard<DomainExcelFileColumn> = function (data): data is DomainExcelFileColumn {
-    return isArray(data, (value: unknown): value is string => isString(value)) && data.length === LENGTH_OF_COLUMN_DATA;
+const isDomainExcelFileColumns: TypeGuard<DomainExcelFileColumns> = function (data): data is DomainExcelFileColumns {
+    return isArray(data, isString);
 };
 
 export const isDomainExcelFileSheetData: TypeGuard<DomainExcelFileSheetData> = function (data): data is DomainExcelFileSheetData {
     return !(
         !isObject(data) ||
-        !isArray(data['firstRow'], isDomainExcelFileColumn) ||
+        !isArray(data['firstRow'], isDomainExcelFileColumns) ||
         !isNumber(data['rowsAmount'])
     );
 };

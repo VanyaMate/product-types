@@ -2,27 +2,26 @@ import {
     TypeGuard,
     TypeAssert,
     isObject,
-    isArray, isString, isNumber, isBoolean,
+    isArray,
+    isString,
+    isNumber,
+    isBoolean,
 } from '@vanyamate/types-kit';
 
 
-export type DomainExcelFileSplitColumnSelect = [ string, boolean ];
-
 export type DomainExcelFileSplitData = {
-    selectedColumns: Array<DomainExcelFileSplitColumnSelect>;
+    selectedSheet: string;
+    selectedColumns: Array<number>;
     convertToTextFile: boolean;
     rowsPerFile: number;
     saveFirstRow: boolean;
 }
 
-const isDomainExcelFileSplitColumnSelect: TypeGuard<DomainExcelFileSplitColumnSelect> = function (data): data is DomainExcelFileSplitColumnSelect {
-    return isArray(data, isString);
-};
-
 export const isDomainExcelFileSplitData: TypeGuard<DomainExcelFileSplitData> = function (data): data is DomainExcelFileSplitData {
     return !(
         !isObject(data) ||
-        !isArray(data['selectedColumns'], isDomainExcelFileSplitColumnSelect) ||
+        !isString(data['selectedSheet']) ||
+        !isArray(data['selectedColumns'], isNumber) ||
         !isNumber(data['rowsPerFile']) ||
         !isBoolean(data['convertToTextFile']) ||
         !isBoolean(data['saveFirstRow'])
