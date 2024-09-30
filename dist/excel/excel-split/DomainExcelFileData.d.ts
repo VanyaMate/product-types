@@ -1,8 +1,8 @@
 import { TypeGuard, TypeAssert } from '@vanyamate/types-kit';
-export type DomainExcelFileColumn = [string, string];
+import { DomainExcelFileSheetData } from './DomainExcelFileSheetData';
+export type DomainExcelFileSheets = Record<string, DomainExcelFileSheetData>;
 export type DomainExcelFileData = {
-    firstRow: Array<DomainExcelFileColumn>;
-    rowsAmount: number;
+    sheets: DomainExcelFileSheets;
 };
 export declare const isDomainExcelFileData: TypeGuard<DomainExcelFileData>;
 export declare const assertDomainExcelFileData: TypeAssert<DomainExcelFileData>;

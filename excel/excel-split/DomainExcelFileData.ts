@@ -5,20 +5,19 @@ import {
     isNumber,
     isArray,
 } from '@vanyamate/types-kit';
+import { DomainExcelFileSheetData } from './DomainExcelFileSheetData';
 
 
-export type DomainExcelFileColumn = [ string, string ];
+export type DomainExcelFileSheets = Record<string, DomainExcelFileSheetData>;
 
 export type DomainExcelFileData = {
-    firstRow: Array<DomainExcelFileColumn>;
-    rowsAmount: number;
+    sheets: DomainExcelFileSheets;
 }
 
 export const isDomainExcelFileData: TypeGuard<DomainExcelFileData> = function (data): data is DomainExcelFileData {
     return !(
         !isObject(data) ||
-        !isNumber(data['rowsAmount']) ||
-        !isArray(data['firstRow'], isObject)
+        !isObject(data['sheets'])
     );
 };
 
