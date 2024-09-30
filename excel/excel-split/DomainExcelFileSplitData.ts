@@ -5,26 +5,21 @@ import {
     isArray,
     isString,
     isNumber,
-    isBoolean,
 } from '@vanyamate/types-kit';
 
 
 export type DomainExcelFileSplitData = {
     selectedSheet: string;
-    selectedColumns: Array<number>;
-    convertToTextFile: boolean;
+    selectedColumns: Array<string>;
     rowsPerFile: number;
-    saveFirstRow: boolean;
 }
 
 export const isDomainExcelFileSplitData: TypeGuard<DomainExcelFileSplitData> = function (data): data is DomainExcelFileSplitData {
     return !(
         !isObject(data) ||
         !isString(data['selectedSheet']) ||
-        !isArray(data['selectedColumns'], isNumber) ||
-        !isNumber(data['rowsPerFile']) ||
-        !isBoolean(data['convertToTextFile']) ||
-        !isBoolean(data['saveFirstRow'])
+        !isArray(data['selectedColumns'], isString) ||
+        !isNumber(data['rowsPerFile'])
     );
 };
 
