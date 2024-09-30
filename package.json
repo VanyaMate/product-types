@@ -1,6 +1,6 @@
 {
     "name": "product-types",
-    "version": "0.3.85",
+    "version": "0.3.86",
     "scripts": {
         "build": "tsc"
     },
@@ -11,5 +11,8 @@
     "description": "",
     "devDependencies": {
         "typescript": "^5.4.5"
+    },
+    "dependencies": {
+        "@vanyamate/types-kit": "^0.0.14"
     }
 }
