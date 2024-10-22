@@ -1,5 +1,4 @@
 import { TypeGuard } from '../_helpers/types/guard.types';
-import { isDomainUser } from '../user/DomainUser';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
 import { isObject } from '../_helpers/lib/isObject';

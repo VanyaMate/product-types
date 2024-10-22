@@ -2,13 +2,13 @@ import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
 import { isObject } from '../_helpers/lib/isObject';
+import { isString } from '@vanyamate/types-kit';
 
 
 export type DomainUser = {
     id: string;
     avatar: string;
     login: string;
-    online: boolean;
 }
 
 export const isDomainUser: TypeGuard<DomainUser> = function (data: unknown): data is DomainUser {
@@ -17,10 +17,9 @@ export const isDomainUser: TypeGuard<DomainUser> = function (data: unknown): dat
     }
 
     if (
-        typeof data['id'] !== 'string' ||
-        typeof data['avatar'] !== 'string' ||
-        typeof data['login'] !== 'string' ||
-        typeof data['online'] !== 'boolean'
+        !isString(data['id']) ||
+        !isString(data['avatar']) ||
+        !isString(data['login'])
     ) {
         return false;
     }

@@ -2,34 +2,31 @@ import { TypeGuard } from '../_helpers/types/guard.types';
 import { isObject } from '../_helpers/lib/isObject';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
-import { DomainUser } from '../user/DomainUser';
-import { DomainMessage } from '../message/DomainMessage';
+import { DomainMessage, isDomainMessage } from '../message/DomainMessage';
+import {
+    DomainUserWithOnline,
+    isDomainUserWithOnline,
+} from '../user/DomainUserWithOnline';
+import { isArray, isString } from '@vanyamate/types-kit';
 
 
 export type DomainDialogue = {
     id: string;
     title: string;
     avatar: string;
-    users: DomainUser[];
+    users: DomainUserWithOnline[];
     messages: DomainMessage[];
 }
 
 export const isDomainDialogue: TypeGuard<DomainDialogue> = function (data: unknown): data is DomainDialogue {
-    if (!isObject(data)) {
-        return false;
-    }
-
-    if (
-        typeof data['id'] !== 'string' ||
-        typeof data['title'] !== 'string' ||
-        typeof data['avatar'] !== 'string' ||
-        !Array.isArray(data['users']) ||
-        !Array.isArray(data['messages'])
-    ) {
-        return false;
-    }
-
-    return true;
+    return (
+        isObject(data) &&
+        isString(data['id']) &&
+        isString(data['title']) &&
+        isString(data['avatar']) &&
+        isArray(data['users'], isDomainUserWithOnline) &&
+        isArray(data['messages'], isDomainMessage)
+    );
 };
 
 export const assertDomainDialogue: TypeAssert<DomainDialogue> = function (data: unknown, variableName: string, typeName: string) {

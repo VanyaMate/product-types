@@ -1,10 +1,10 @@
 import { TypeGuard } from '../_helpers/types/guard.types';
-import { DomainUser } from './DomainUser';
 import { DomainUserNameInfo } from './DomainUserNameInfo';
 import { DomainUserContactsInfo } from './DomainUserContactsInfo';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { DomainUserPermissions } from './DomainUserPermissions';
-export type DomainUserFull = DomainUser & {
+import { DomainUserWithOnline } from './DomainUserWithOnline';
+export type DomainUserFull = DomainUserWithOnline & {
     background: string | null;
     nameInfo: DomainUserNameInfo;
     contacts: DomainUserContactsInfo;

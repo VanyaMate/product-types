@@ -1,29 +1,27 @@
 import { TypeGuard } from '../_helpers/types/guard.types';
-import { isObject } from '../_helpers/lib/isObject';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
+import {
+    DomainUserWithOnline,
+    isDomainUserWithOnline,
+} from '../user/DomainUserWithOnline';
+import { DomainUser, isDomainUser } from '../user/DomainUser';
+import { isArray, isObject } from '@vanyamate/types-kit';
 
 
 export type DomainFriends = {
-    friends: unknown[];
-    requestsOut: unknown[];
-    requestsIn: unknown[];
+    friends: DomainUserWithOnline[];
+    requestsOut: DomainUser[];
+    requestsIn: DomainUser[];
 }
 
 export const isDomainFriends: TypeGuard<DomainFriends> = function (data: unknown): data is DomainFriends {
-    if (!isObject(data)) {
-        return false;
-    }
-
-    if (
-        !Array.isArray(data['friends']) ||
-        !Array.isArray(data['requestsOut']) ||
-        !Array.isArray(data['requestsIn'])
-    ) {
-        return false;
-    }
-
-    return true;
+    return (
+        isObject(data) &&
+        isArray(data['friends'], isDomainUserWithOnline) &&
+        isArray(data['requestsOut'], isDomainUser) &&
+        isArray(data['requestsIn'], isDomainUser)
+    );
 };
 
 export const assertDomainFriends: TypeAssert<DomainFriends> = function (data: unknown, variableName: string, typeName: string) {

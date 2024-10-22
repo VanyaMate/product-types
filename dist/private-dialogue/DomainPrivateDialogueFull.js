@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.assertDomainPrivateDialogueFull = exports.isDomainPrivateDialogueFull = void 0;
-var DomainUser_1 = require("../user/DomainUser");
 var isObject_1 = require("../_helpers/lib/isObject");
 var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
 var DomainMessage_1 = require("../message/DomainMessage");
 var DomainPrivateDialogue_1 = require("./DomainPrivateDialogue");
 var isArray_1 = require("../_helpers/lib/isArray");
+var DomainUserWithOnline_1 = require("../user/DomainUserWithOnline");
 var isDomainPrivateDialogueFull = function (data) {
     if (!(0, isObject_1.isObject)(data)) {
         return false;
@@ -17,7 +17,7 @@ var isDomainPrivateDialogueFull = function (data) {
         typeof data['meDeleted'] !== 'boolean' ||
         typeof data['companionArchived'] !== 'boolean' ||
         typeof data['companionDeleted'] !== 'boolean' ||
-        !(0, DomainUser_1.isDomainUser)(data['user']) ||
+        !(0, DomainUserWithOnline_1.isDomainUserWithOnline)(data['user']) ||
         !(0, isArray_1.isArray)(data['messages'], DomainMessage_1.isDomainMessage)) {
         return false;
     }

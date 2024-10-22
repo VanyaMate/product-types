@@ -1,5 +1,4 @@
 import { TypeGuard } from '../_helpers/types/guard.types';
-import { DomainUser, isDomainUser } from './DomainUser';
 import { DomainUserNameInfo, isDomainUserNameInfo } from './DomainUserNameInfo';
 import {
     DomainUserContactsInfo,
@@ -12,11 +11,15 @@ import {
     DomainUserPermissions,
     isDomainUserPermissions,
 } from './DomainUserPermissions';
+import {
+    DomainUserWithOnline,
+    isDomainUserWithOnline,
+} from './DomainUserWithOnline';
 
 
 export type DomainUserFull =
-    DomainUser &
-    {
+    DomainUserWithOnline
+    & {
         background: string | null;
         nameInfo: DomainUserNameInfo;
         contacts: DomainUserContactsInfo;
@@ -33,7 +36,7 @@ export const isDomainUserFull: TypeGuard<DomainUserFull> = function (data: unkno
     }
 
     if (
-        !isDomainUser(data) ||
+        !isDomainUserWithOnline(data) ||
         !isDomainUserNameInfo(data['nameInfo']) ||
         !isDomainUserContactsInfo(data['contacts']) ||
         !isDomainUserPermissions(data['permissions'])

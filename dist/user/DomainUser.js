@@ -3,14 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.assertDomainUser = exports.isDomainUser = void 0;
 var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
 var isObject_1 = require("../_helpers/lib/isObject");
+var types_kit_1 = require("@vanyamate/types-kit");
 var isDomainUser = function (data) {
     if (!(0, isObject_1.isObject)(data)) {
         return false;
     }
-    if (typeof data['id'] !== 'string' ||
-        typeof data['avatar'] !== 'string' ||
-        typeof data['login'] !== 'string' ||
-        typeof data['online'] !== 'boolean') {
+    if (!(0, types_kit_1.isString)(data['id']) ||
+        !(0, types_kit_1.isString)(data['avatar']) ||
+        !(0, types_kit_1.isString)(data['login'])) {
         return false;
     }
     return true;
