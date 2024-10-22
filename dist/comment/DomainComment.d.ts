@@ -6,6 +6,11 @@ export type DomainComment = {
     author: DomainUser;
     creationDate: number;
     redacted: boolean;
+    liked: boolean;
+    likes: number;
+    replies: number;
+    forwards: number;
+    comments: Array<DomainComment>;
 };
 export declare const isDomainComment: TypeGuard<DomainComment>;
 export declare const assertDomainComment: TypeAssert<DomainComment>;

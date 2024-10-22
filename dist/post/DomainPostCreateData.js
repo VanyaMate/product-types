@@ -3,11 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.assertDomainPostCreateData = exports.isDomainPostCreateData = void 0;
 var isObject_1 = require("../_helpers/lib/isObject");
 var throwAssertError_1 = require("../_helpers/lib/throwAssertError");
+var types_kit_1 = require("@vanyamate/types-kit");
 var isDomainPostCreateData = function (data) {
     if (!(0, isObject_1.isObject)(data)) {
         return false;
     }
-    if (typeof data['message'] !== 'string') {
+    if (!(0, types_kit_1.isString)(data['message'])) {
         return false;
     }
     return true;

@@ -2,6 +2,7 @@ import { TypeGuard } from '../_helpers/types/guard.types';
 import { isObject } from '../_helpers/lib/isObject';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
+import { isString } from '@vanyamate/types-kit';
 
 
 export type DomainPostCreateData = {
@@ -13,9 +14,7 @@ export const isDomainPostCreateData: TypeGuard<DomainPostCreateData> = function 
         return false;
     }
 
-    if (
-        typeof data['message'] !== 'string'
-    ) {
+    if (!isString(data['message'])) {
         return false;
     }
 

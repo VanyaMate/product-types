@@ -9,7 +9,12 @@ var isDomainComment = function (data) {
         !(0, types_kit_1.isString)(data['comment']) ||
         !(0, DomainUser_1.isDomainUser)(data['author']) ||
         !(0, types_kit_1.isNumber)(data['creationDate']) ||
-        !(0, types_kit_1.isBoolean)(data['redacted']));
+        !(0, types_kit_1.isBoolean)(data['redacted']) ||
+        !(0, types_kit_1.isBoolean)(data['liked']) ||
+        !(0, types_kit_1.isNumber)(data['likes']) ||
+        !(0, types_kit_1.isNumber)(data['replies']) ||
+        !(0, types_kit_1.isNumber)(data['forwards']) ||
+        !(0, types_kit_1.isArray)(data['comments'], exports.isDomainComment));
 };
 exports.isDomainComment = isDomainComment;
 var assertDomainComment = function (data, errorMessage) {

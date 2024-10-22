@@ -3,6 +3,8 @@ import { isObject } from '../_helpers/lib/isObject';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
 import { DomainUser, isDomainUser } from '../user/DomainUser';
+import { isArray, isBoolean, isNumber, isString } from '@vanyamate/types-kit';
+import { DomainComment, isDomainComment } from '../comment/DomainComment';
 
 
 export type DomainPost = {
@@ -11,6 +13,11 @@ export type DomainPost = {
     redacted: boolean;
     creationData: number;
     author: DomainUser;
+    liked: boolean;
+    likes: number;
+    replies: number;
+    forwards: number;
+    comments: Array<DomainComment>;
 }
 
 export const isDomainPost: TypeGuard<DomainPost> = function (data: unknown): data is DomainPost {
@@ -19,11 +26,16 @@ export const isDomainPost: TypeGuard<DomainPost> = function (data: unknown): dat
     }
 
     if (
-        typeof data['id'] !== 'string' ||
-        typeof data['message'] !== 'string' ||
-        typeof data['redacted'] !== 'boolean' ||
-        typeof data['creationData'] !== 'number' ||
-        !isDomainUser(data['author'])
+        !isString(data['id']) ||
+        !isString(data['message']) ||
+        !isBoolean(data['redacted']) ||
+        !isNumber(data['creationData']) ||
+        !isDomainUser(data['author']) ||
+        !isBoolean(data['liked']) ||
+        !isNumber(data['likes']) ||
+        !isNumber(data['replies']) ||
+        !isNumber(data['forwards']) ||
+        !isArray(data['comments'], isDomainComment)
     ) {
         return false;
     }
