@@ -11,14 +11,11 @@ import {
     DomainUserPermissions,
     isDomainUserPermissions,
 } from './DomainUserPermissions';
-import {
-    DomainUserWithOnline,
-    isDomainUserWithOnline,
-} from './DomainUserWithOnline';
+import { DomainUser, isDomainUser } from './DomainUser';
 
 
 export type DomainUserFull =
-    DomainUserWithOnline
+    DomainUser
     & {
         background: string | null;
         nameInfo: DomainUserNameInfo;
@@ -36,7 +33,7 @@ export const isDomainUserFull: TypeGuard<DomainUserFull> = function (data: unkno
     }
 
     if (
-        !isDomainUserWithOnline(data) ||
+        !isDomainUser(data) ||
         !isDomainUserNameInfo(data['nameInfo']) ||
         !isDomainUserContactsInfo(data['contacts']) ||
         !isDomainUserPermissions(data['permissions'])

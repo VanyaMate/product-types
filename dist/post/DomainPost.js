@@ -16,9 +16,9 @@ var isDomainPost = function (data) {
         !(0, types_kit_1.isNumber)(data['creationData']) ||
         !(0, DomainUser_1.isDomainUser)(data['author']) ||
         !(0, types_kit_1.isBoolean)(data['liked']) ||
-        !(0, types_kit_1.isNumber)(data['likes']) ||
-        !(0, types_kit_1.isNumber)(data['replies']) ||
-        !(0, types_kit_1.isNumber)(data['forwards']) ||
+        !(0, types_kit_1.isNumber)(data['likesAmount']) ||
+        !(0, types_kit_1.isNumber)(data['forwardsAmount']) ||
+        !(0, types_kit_1.isNumber)(data['commentsAmount']) ||
         !(0, types_kit_1.isArray)(data['comments'], DomainComment_1.isDomainComment)) {
         return false;
     }

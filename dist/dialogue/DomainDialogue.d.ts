@@ -1,12 +1,12 @@
 import { TypeGuard } from '../_helpers/types/guard.types';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { DomainMessage } from '../message/DomainMessage';
-import { DomainUserWithOnline } from '../user/DomainUserWithOnline';
+import { DomainUser } from '../user/DomainUser';
 export type DomainDialogue = {
     id: string;
     title: string;
     avatar: string;
-    users: DomainUserWithOnline[];
+    users: DomainUser[];
     messages: DomainMessage[];
 };
 export declare const isDomainDialogue: TypeGuard<DomainDialogue>;

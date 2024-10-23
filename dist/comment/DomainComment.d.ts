@@ -7,9 +7,9 @@ export type DomainComment = {
     creationDate: number;
     redacted: boolean;
     liked: boolean;
-    likes: number;
-    replies: number;
-    forwards: number;
+    likesAmount: number;
+    repliesAmount: number;
+    forwardsAmount: number;
     comments: Array<DomainComment>;
 };
 export declare const isDomainComment: TypeGuard<DomainComment>;

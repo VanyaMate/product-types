@@ -2,17 +2,14 @@ import { TypeGuard } from '../_helpers/types/guard.types';
 import { isObject } from '../_helpers/lib/isObject';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
-import {
-    DomainUserWithOnline,
-    isDomainUserWithOnline,
-} from '../user/DomainUserWithOnline';
+import { isDomainUser, DomainUser } from '../user/DomainUser';
 
 
 export type DomainPrivateDialogueWithUser = {
     id: string;
     title: string;
     avatar: string;
-    user: DomainUserWithOnline;
+    user: DomainUser;
 }
 
 export const isDomainPrivateDialogueWithUser: TypeGuard<DomainPrivateDialogueWithUser> = function (data: unknown): data is DomainPrivateDialogueWithUser {
@@ -24,7 +21,7 @@ export const isDomainPrivateDialogueWithUser: TypeGuard<DomainPrivateDialogueWit
         typeof data['id'] !== 'string' ||
         typeof data['title'] !== 'string' ||
         typeof data['avatar'] !== 'string' ||
-        !isDomainUserWithOnline(data['user'])
+        !isDomainUser(data['user'])
     ) {
         return false;
     }

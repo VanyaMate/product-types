@@ -8,10 +8,7 @@ import {
     isDomainPrivateDialogue,
 } from './DomainPrivateDialogue';
 import { isArray } from '../_helpers/lib/isArray';
-import {
-    DomainUserWithOnline,
-    isDomainUserWithOnline,
-} from '../user/DomainUserWithOnline';
+import { DomainUser, isDomainUser } from '../user/DomainUser';
 
 
 export type DomainPrivateDialogueFull =
@@ -24,7 +21,7 @@ export type DomainPrivateDialogueFull =
         companionArchived: boolean;
         companionDeleted: boolean;
 
-        user: DomainUserWithOnline;
+        user: DomainUser;
         messages: DomainMessage[];
     }
 
@@ -40,7 +37,7 @@ export const isDomainPrivateDialogueFull: TypeGuard<DomainPrivateDialogueFull> =
         typeof data['meDeleted'] !== 'boolean' ||
         typeof data['companionArchived'] !== 'boolean' ||
         typeof data['companionDeleted'] !== 'boolean' ||
-        !isDomainUserWithOnline(data['user']) ||
+        !isDomainUser(data['user']) ||
         !isArray(data['messages'], isDomainMessage)
     ) {
         return false;

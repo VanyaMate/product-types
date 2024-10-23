@@ -14,9 +14,9 @@ export type DomainComment = {
     creationDate: number;
     redacted: boolean;
     liked: boolean;
-    likes: number;
-    replies: number;
-    forwards: number;
+    likesAmount: number;
+    repliesAmount: number;
+    forwardsAmount: number;
     comments: Array<DomainComment>;
 }
 
@@ -29,9 +29,9 @@ export const isDomainComment: TypeGuard<DomainComment> = function (data): data i
         !isNumber(data['creationDate']) ||
         !isBoolean(data['redacted']) ||
         !isBoolean(data['liked']) ||
-        !isNumber(data['likes']) ||
-        !isNumber(data['replies']) ||
-        !isNumber(data['forwards']) ||
+        !isNumber(data['likesAmount']) ||
+        !isNumber(data['repliesAmount']) ||
+        !isNumber(data['forwardsAmount']) ||
         !isArray(data['comments'], isDomainComment)
     );
 };

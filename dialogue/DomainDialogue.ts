@@ -3,18 +3,15 @@ import { isObject } from '../_helpers/lib/isObject';
 import { TypeAssert } from '../_helpers/types/assert.types';
 import { throwAssertError } from '../_helpers/lib/throwAssertError';
 import { DomainMessage, isDomainMessage } from '../message/DomainMessage';
-import {
-    DomainUserWithOnline,
-    isDomainUserWithOnline,
-} from '../user/DomainUserWithOnline';
 import { isArray, isString } from '@vanyamate/types-kit';
+import { DomainUser, isDomainUser } from '../user/DomainUser';
 
 
 export type DomainDialogue = {
     id: string;
     title: string;
     avatar: string;
-    users: DomainUserWithOnline[];
+    users: DomainUser[];
     messages: DomainMessage[];
 }
 
@@ -24,7 +21,7 @@ export const isDomainDialogue: TypeGuard<DomainDialogue> = function (data: unkno
         isString(data['id']) &&
         isString(data['title']) &&
         isString(data['avatar']) &&
-        isArray(data['users'], isDomainUserWithOnline) &&
+        isArray(data['users'], isDomainUser) &&
         isArray(data['messages'], isDomainMessage)
     );
 };

@@ -9,9 +9,9 @@ export type DomainPost = {
     creationData: number;
     author: DomainUser;
     liked: boolean;
-    likes: number;
-    replies: number;
-    forwards: number;
+    likesAmount: number;
+    forwardsAmount: number;
+    commentsAmount: number;
     comments: Array<DomainComment>;
 };
 export declare const isDomainPost: TypeGuard<DomainPost>;

@@ -14,9 +14,9 @@ export type DomainPost = {
     creationData: number;
     author: DomainUser;
     liked: boolean;
-    likes: number;
-    replies: number;
-    forwards: number;
+    likesAmount: number;
+    forwardsAmount: number;
+    commentsAmount: number;
     comments: Array<DomainComment>;
 }
 
@@ -32,9 +32,9 @@ export const isDomainPost: TypeGuard<DomainPost> = function (data: unknown): dat
         !isNumber(data['creationData']) ||
         !isDomainUser(data['author']) ||
         !isBoolean(data['liked']) ||
-        !isNumber(data['likes']) ||
-        !isNumber(data['replies']) ||
-        !isNumber(data['forwards']) ||
+        !isNumber(data['likesAmount']) ||
+        !isNumber(data['forwardsAmount']) ||
+        !isNumber(data['commentsAmount']) ||
         !isArray(data['comments'], isDomainComment)
     ) {
         return false;
