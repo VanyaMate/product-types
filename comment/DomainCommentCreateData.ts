@@ -2,18 +2,20 @@ import {
     TypeGuard,
     TypeAssert,
     isObject,
-    isString,
+    isString, isOptional,
 } from '@vanyamate/types-kit';
 
 
 export type DomainCommentCreateData = {
     comment: string;
+    replyId?: string | undefined;
 }
 
 export const isDomainCommentCreateData: TypeGuard<DomainCommentCreateData> = function (data): data is DomainCommentCreateData {
-    return !(
-        !isObject(data) ||
-        !isString(data['comment'])
+    return (
+        isObject(data) &&
+        isString(data['comment']) &&
+        isOptional(data['replyId'], isString)
     );
 };
 

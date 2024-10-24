@@ -4,17 +4,18 @@ exports.assertDomainComment = exports.isDomainComment = void 0;
 var types_kit_1 = require("@vanyamate/types-kit");
 var DomainUser_1 = require("../user/DomainUser");
 var isDomainComment = function (data) {
-    return !(!(0, types_kit_1.isObject)(data) ||
-        !(0, types_kit_1.isString)(data['id']) ||
-        !(0, types_kit_1.isString)(data['comment']) ||
-        !(0, DomainUser_1.isDomainUser)(data['author']) ||
-        !(0, types_kit_1.isNumber)(data['creationDate']) ||
-        !(0, types_kit_1.isBoolean)(data['redacted']) ||
-        !(0, types_kit_1.isBoolean)(data['liked']) ||
-        !(0, types_kit_1.isNumber)(data['likesAmount']) ||
-        !(0, types_kit_1.isNumber)(data['repliesAmount']) ||
-        !(0, types_kit_1.isNumber)(data['forwardsAmount']) ||
-        !(0, types_kit_1.isArray)(data['comments'], exports.isDomainComment));
+    return ((0, types_kit_1.isObject)(data) &&
+        (0, types_kit_1.isString)(data['id']) &&
+        (0, types_kit_1.isString)(data['comment']) &&
+        (0, DomainUser_1.isDomainUser)(data['author']) &&
+        (0, types_kit_1.isNumber)(data['creationDate']) &&
+        (0, types_kit_1.isBoolean)(data['redacted']) &&
+        (0, types_kit_1.isBoolean)(data['liked']) &&
+        (0, types_kit_1.isNumber)(data['likesAmount']) &&
+        (0, types_kit_1.isNumber)(data['repliesAmount']) &&
+        (0, types_kit_1.isNumber)(data['forwardsAmount']) &&
+        (0, types_kit_1.isOptional)(data['replyId'], types_kit_1.isString) &&
+        (0, types_kit_1.isArray)(data['comments'], exports.isDomainComment));
 };
 exports.isDomainComment = isDomainComment;
 var assertDomainComment = function (data, errorMessage) {
