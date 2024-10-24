@@ -14,7 +14,6 @@ var isDomainComment = function (data) {
         (0, types_kit_1.isNumber)(data['likesAmount']) &&
         (0, types_kit_1.isNumber)(data['repliesAmount']) &&
         (0, types_kit_1.isNumber)(data['forwardsAmount']) &&
-        (0, types_kit_1.isOptional)(data['replyId'], types_kit_1.isString) &&
         (0, types_kit_1.isArray)(data['comments'], exports.isDomainComment));
 };
 exports.isDomainComment = isDomainComment;

@@ -10,7 +10,6 @@ export type DomainComment = {
     likesAmount: number;
     repliesAmount: number;
     forwardsAmount: number;
-    replyId?: string | undefined;
     comments: Array<DomainComment>;
 };
 export declare const isDomainComment: TypeGuard<DomainComment>;

@@ -17,7 +17,6 @@ export type DomainComment = {
     likesAmount: number;
     repliesAmount: number;
     forwardsAmount: number;
-    replyId?: string | undefined;
     comments: Array<DomainComment>;
 }
 
@@ -33,7 +32,6 @@ export const isDomainComment: TypeGuard<DomainComment> = function (data): data i
         isNumber(data['likesAmount']) &&
         isNumber(data['repliesAmount']) &&
         isNumber(data['forwardsAmount']) &&
-        isOptional(data['replyId'], isString) &&
         isArray(data['comments'], isDomainComment)
     );
 };
