@@ -1,6 +1,6 @@
 {
     "name": "product-types",
-    "version": "0.3.103",
+    "version": "0.3.104",
     "scripts": {
         "build": "tsc"
     },
