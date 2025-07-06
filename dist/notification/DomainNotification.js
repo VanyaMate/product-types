@@ -94,7 +94,7 @@ var DomainNotificationType;
     DomainNotificationType["POST_COMMENT_CREATED_IN"] = "pt_com_c_in";
     DomainNotificationType["POST_COMMENT_CREATED_OUT"] = "pt_com_c_out";
     DomainNotificationType["POST_COMMENT_UPDATED_IN"] = "pt_com_u_in";
-    DomainNotificationType["POST_COMMNET_UPDATED_OUT"] = "pt_com_u_out";
+    DomainNotificationType["POST_COMMENT_UPDATED_OUT"] = "pt_com_u_out";
     DomainNotificationType["POST_COMMENT_DELETED_IN"] = "pt_com_d_in";
     DomainNotificationType["POST_COMMENT_DELETED_OUT"] = "pt_com_d_out";
     DomainNotificationType["POST_COMMENT_LIKED_IN"] = "pt_com_lk_in";
@@ -104,7 +104,7 @@ var DomainNotificationType;
     DomainNotificationType["POST_COMMENT_REPLY_CREATED_IN"] = "pt_comr_c_in";
     DomainNotificationType["POST_COMMENT_REPLY_CREATED_OUT"] = "pt_comr_c_out";
     DomainNotificationType["POST_COMMENT_REPLY_UPDATED_IN"] = "pt_comr_u_in";
-    DomainNotificationType["POST_COMMNET_REPLY_UPDATED_OUT"] = "pt_comr_u_out";
+    DomainNotificationType["POST_COMMENT_REPLY_UPDATED_OUT"] = "pt_comr_u_out";
     DomainNotificationType["POST_COMMENT_REPLY_DELETED_IN"] = "pt_comr_d_in";
     DomainNotificationType["POST_COMMENT_REPLY_DELETED_OUT"] = "pt_comr_d_out";
     // File
