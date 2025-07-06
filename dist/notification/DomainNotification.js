@@ -86,6 +86,27 @@ var DomainNotificationType;
     DomainNotificationType["POST_UPDATED_OUT"] = "pt_u_out";
     DomainNotificationType["POST_DELETED_IN"] = "pt_d_in";
     DomainNotificationType["POST_DELETED_OUT"] = "pt_d_out";
+    DomainNotificationType["POST_LIKED_IN"] = "pt_lk_in";
+    DomainNotificationType["POST_LIKED_OUT"] = "pt_lk_out";
+    DomainNotificationType["POST_UNLIKED_IN"] = "pt_ulk_out";
+    DomainNotificationType["POST_UNLIKED_OUT"] = "pt_ulk_out";
+    // Post comment
+    DomainNotificationType["POST_COMMENT_CREATED_IN"] = "pt_com_c_in";
+    DomainNotificationType["POST_COMMENT_CREATED_OUT"] = "pt_com_c_out";
+    DomainNotificationType["POST_COMMENT_UPDATED_IN"] = "pt_com_u_in";
+    DomainNotificationType["POST_COMMNET_UPDATED_OUT"] = "pt_com_u_out";
+    DomainNotificationType["POST_COMMENT_DELETED_IN"] = "pt_com_d_in";
+    DomainNotificationType["POST_COMMENT_DELETED_OUT"] = "pt_com_d_out";
+    DomainNotificationType["POST_COMMENT_LIKED_IN"] = "pt_com_lk_in";
+    DomainNotificationType["POST_COMMENT_LIKED_OUT"] = "pt_com_lk_out";
+    DomainNotificationType["POST_COMMENT_UNLIKED_IN"] = "pt_com_ulk_in";
+    DomainNotificationType["POST_COMMENT_UNLIKED_OUT"] = "pt_com_ulk_out";
+    DomainNotificationType["POST_COMMENT_REPLY_CREATED_IN"] = "pt_comr_c_in";
+    DomainNotificationType["POST_COMMENT_REPLY_CREATED_OUT"] = "pt_comr_c_out";
+    DomainNotificationType["POST_COMMENT_REPLY_UPDATED_IN"] = "pt_comr_u_in";
+    DomainNotificationType["POST_COMMNET_REPLY_UPDATED_OUT"] = "pt_comr_u_out";
+    DomainNotificationType["POST_COMMENT_REPLY_DELETED_IN"] = "pt_comr_d_in";
+    DomainNotificationType["POST_COMMENT_REPLY_DELETED_OUT"] = "pt_comr_d_out";
     // File
     DomainNotificationType["FILE_UPLOADED_IN"] = "fl_u_in";
     DomainNotificationType["FILE_UPLOADED_OUT"] = "fl_u_out";
