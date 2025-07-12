@@ -88,7 +88,7 @@ var DomainNotificationType;
     DomainNotificationType["POST_DELETED_OUT"] = "pt_d_out";
     DomainNotificationType["POST_LIKED_IN"] = "pt_lk_in";
     DomainNotificationType["POST_LIKED_OUT"] = "pt_lk_out";
-    DomainNotificationType["POST_UNLIKED_IN"] = "pt_ulk_out";
+    DomainNotificationType["POST_UNLIKED_IN"] = "pt_ulk_in";
     DomainNotificationType["POST_UNLIKED_OUT"] = "pt_ulk_out";
     // Post comment
     DomainNotificationType["POST_COMMENT_CREATED_IN"] = "pt_com_c_in";

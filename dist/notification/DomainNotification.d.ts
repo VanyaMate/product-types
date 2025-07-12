@@ -74,7 +74,7 @@ export declare enum DomainNotificationType {
     POST_DELETED_OUT = "pt_d_out",
     POST_LIKED_IN = "pt_lk_in",
     POST_LIKED_OUT = "pt_lk_out",
-    POST_UNLIKED_IN = "pt_ulk_out",
+    POST_UNLIKED_IN = "pt_ulk_in",
     POST_UNLIKED_OUT = "pt_ulk_out",
     POST_COMMENT_CREATED_IN = "pt_com_c_in",
     POST_COMMENT_CREATED_OUT = "pt_com_c_out",
